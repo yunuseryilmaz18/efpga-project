@@ -1,0 +1,8 @@
+*.o
+*.a
+*.asm
+*.hex
+*.bin
+*.elf
+work/
+toolchain/
