@@ -33,10 +33,13 @@
 
 int main()
 {
+	EFPGA_REG(0) = 0;
+	EFPGA_REG(4) = 0x200 << (63-48);
+	EFPGA_REG(4) = 0x201 << (63-48);
+	EFPGA_REG(4) = 0x001 << (63-48);
 	// Initializing uart
 	UART0_REG(UART_CLKDIV) = CPU_CLK/BAUD_RATE;	// was 104, should be 868 now.
-	EFPGA_REG(0) = 1 << (32-7);
-	EFPGA_REG(4) = 1 << (32-16);
+	// EFPGA_REG(4) = 0x201 << (63-39);
 	
 picosoc_printf("\n"
 "--------------------------------------------------------------------------------\n"

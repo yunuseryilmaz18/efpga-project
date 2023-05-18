@@ -3,6 +3,8 @@ Yüksek lisans tezim, açık kaynak eFPGA tasarımı, için oluşturulmuş repo.
 
 ## Yapılacaklar
 - FPGA'yi programlayacak blok yazılmalı. 
+- Giriş Çıkış seçmek için register yazılacak.
+- FPGA durumunu belirten register üretilecek.
 - İhtiyaç olmayan bloklar silinecek.
 
 ## Program üretimi

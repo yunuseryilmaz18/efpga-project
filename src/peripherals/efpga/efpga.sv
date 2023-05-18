@@ -29,36 +29,15 @@ assign read_en  = wb_efpga_i.a_stb & wb_efpga_i.a_cyc & !wb_efpga_i.a_we;
 assign write_en = wb_efpga_i.a_stb & wb_efpga_i.a_cyc & wb_efpga_i.a_we;
 
 wire [0:63] fpga_gpio;
-reg  [0:63] fpga_gpio_q;
+reg [0:31] gpio_in0, gpio_in1;
+reg [0:31] gpio_out0, gpio_out1;
 
-wire prog_rst	;
-wire fpga_rst	;
-wire prog		;
-wire pulse	    ;
-wire config_clk ;
-wire config_done;
+assign fpga_gpio[39] = gpio_in1[7];
+assign fpga_gpio[48] = gpio_in1[16];
+assign gpio_out1[0] = fpga_gpio[34]; 
 
-// CLOCK GATING PURPOSES
-reg config_done_d;
-reg fpga_rst_d   ;
-reg prog_rst_d   ;
-// CLOCK GATING PURPOSES
-
-assign operating_clk = clk_i & ~fpga_rst_d & config_done_d;
-assign config_clk = clk_i & fpga_rst_d & ~prog_rst_d;
-
-reg [31:0] gpio_in0, gpio_in1;
-reg [31:0] gpio_out0, gpio_out1;
-
-always @(negedge clk_i) begin
-	config_done_d 	<= config_done	;
-	fpga_rst_d 		<= fpga_rst		;
-	prog_rst_d 		<= prog_rst		;
-end
-
-assign fpga_gpio = {gpio_in0, gpio_in1};
-assign gpio_out0 = fpga_gpio[0:31];
-assign gpio_out1 = fpga_gpio[32:63]; 
+reg [31:0] io_select0; //0-31  input/output select, 0: output
+reg [31:0] io_select1; //31-63 input/output select, 1: input
 
 /*
 fpga_config configurator
@@ -72,24 +51,26 @@ fpga_config configurator
 );*/
 
 fpga_top FPGA (
-	.pReset					(1'b0	),
+	.pReset					(1'b0	  ),
 	.prog_clk				(1'b0	  ),
 	.set					(1'b0     ),
-	.reset					(1'b0	  ),
+	.reset					(rst_ni	  ),
 	.clk					(clk_i    ),
 	.gfpga_pad_GPIO_PAD	    (fpga_gpio),
 	.ccff_head				(1'b0     ),
 	.ccff_tail				()
 );
 
-// input_a = 39 (39-32) = 7)
+// input_a = 39 (39-32 = 7)
 // input_b = 48 (48-32 = 16)
-// output_c = 34
+// output_c = 34 (34-32 = 2)
 
 always @(posedge clk_i) begin
     if (!rst_ni) begin
         wb_efpga_o.d_dat <= 0;
         wb_efpga_o.d_ack <= 0;    
+        gpio_in0 <= 0;
+        gpio_in1 <= 0;
     end else if (read_en && wb_efpga_i.a_adr[3:0] == 4'h0) begin
         wb_efpga_o.d_dat <= gpio_out0;
         wb_efpga_o.d_ack <= 1'b1;

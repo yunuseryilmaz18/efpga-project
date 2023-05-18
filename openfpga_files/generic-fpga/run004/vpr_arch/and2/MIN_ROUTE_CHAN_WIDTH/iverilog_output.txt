@@ -1,1 +1,0 @@
-iverilog -o compiled_and2 ./SRC/and2_include_netlists.v -s and2_autocheck_top_tb -I ./SRC
