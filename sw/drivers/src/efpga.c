@@ -18,3 +18,8 @@ int read_gpio1() {
 	int    *gpio1 = (int *) 0x42000004;
 	return *gpio1;
 }
+
+int read_efpga_csr() {
+	int    *csr = (int *) 0x42000008;
+	return *csr;
+}

@@ -14,6 +14,7 @@ ASM_SRCS += $(ENV_DIR)/start.S
 C_SRCS += $(ENV_DIR)/../../drivers/src/uart_driver.c
 C_SRCS += $(ENV_DIR)/../../drivers/src/spi_driver.c
 C_SRCS += $(ENV_DIR)/../../drivers/src/timer.c
+C_SRCS += $(ENV_DIR)/../../drivers/src/efpga.c
 
 # BOARD dependend code
 

@@ -37,6 +37,7 @@ assign clk_i = clk_in1;
     .clk_in1(clk_in1));      // input clk_in1
 */
 wire sram_prog_rst_n;
+wire rst_n;
 assign rst_n = sram_prog_rst_n & rst_ni;
 
 reg [31:0] irq;

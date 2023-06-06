@@ -60,6 +60,15 @@ output [0:0] out;
 
 // ----- Verilog codes of a regular inverter -----
 	assign out = (in === 1'bz)? $random : ~in;
+
+    `ifdef ENABLE_TIMING
+// ------ BEGIN Pin-to-pin Timing constraints -----
+	specify
+		(in => out) = (0.01, 0.01);
+	endspecify
+// ------ END Pin-to-pin Timing constraints -----
+    `endif
+
 endmodule
 // ----- END Verilog module for INVTX1 -----
 
@@ -82,6 +91,15 @@ output [0:0] out;
 
 // ----- Verilog codes of a regular inverter -----
 	assign out = (in === 1'bz)? $random : in;
+
+    `ifdef ENABLE_TIMING
+// ------ BEGIN Pin-to-pin Timing constraints -----
+	specify
+		(in => out) = (0.01, 0.01);
+	endspecify
+// ------ END Pin-to-pin Timing constraints -----
+`endif
+
 endmodule
 // ----- END Verilog module for buf4 -----
 
@@ -104,6 +122,15 @@ output [0:0] out;
 
 // ----- Verilog codes of a regular inverter -----
 	assign out = (in === 1'bz)? $random : ~in;
+
+    `ifdef ENABLE_TIMING
+// ------ BEGIN Pin-to-pin Timing constraints -----
+	specify
+		(in => out) = (0.01, 0.01);
+	endspecify
+// ------ END Pin-to-pin Timing constraints -----
+`endif
+
 endmodule
 // ----- END Verilog module for tap_buf4 -----
 
@@ -131,6 +158,13 @@ output [0:0] out;
 //----- END Registered ports -----
 
 	assign out = sel ? in : 1'bz;
+
+    specify
+		(in => out) = (0.01, 0.01);
+		(sel => out) = (0.005, 0.005);
+		(selb => out) = (0.005, 0.005);
+	endspecify
+
 endmodule
 // ----- END Verilog module for TGATE -----
 

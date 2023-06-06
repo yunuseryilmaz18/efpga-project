@@ -25,6 +25,7 @@ module timer (
     output wb_d2h_t wb_timer_o
 );
 
+wire read_en;
 assign read_en = wb_timer_i.a_stb & wb_timer_i.a_cyc & !wb_timer_i.a_we;
 
 reg [63:0] timer;

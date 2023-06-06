@@ -6,7 +6,7 @@
 //	Date: Wed May 17 00:09:22 2023
 //-------------------------------------------
 //----- Time scale -----
-`timescale 1ns / 1ps
+`timescale 1ns / 100ps
 
 `define ENABLE_TIMING 1
 

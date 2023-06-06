@@ -2,7 +2,7 @@
 
 
 xrun:
-	xrun -f fpga_top.f -gui -access +rwc
+	xrun -f fpga_top.f -gui -access +rwc -ALLOWREDEFINITION -input restore.tcl
 
 vsim:
 	vsim -do questa_run.do ./sw/outputs/hex/picosoc_test.hex
@@ -16,4 +16,3 @@ clean:
 	rm -f ../xrun.history
 	rm -f ../xrun.log
 	rm -rf .simvision/
-	rm -f sim*
