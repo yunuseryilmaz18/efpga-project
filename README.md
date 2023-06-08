@@ -4,6 +4,11 @@ Yüksek lisans tezim, açık kaynak eFPGA tasarımı, için oluşturulmuş repo.
 [Projenin blok diyagramı]
 
 ## Yapılacaklar
+- Multibit programlamaya bakılabilir.
+- FPGA'yi runtime'da programlama eklenecek.
+- Wishbone yerine AXI kullanılabilir.
+- Diğer çalışmalarla karşılaştırılacak.
+- Datapath'e eklemek mantıklı ama şu anki hali iyi gibi.
 - Yeni bir programlama bloğu yazılabilir.
 - Kullanılmayan bloklar silinecek.
 
