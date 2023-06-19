@@ -1,0 +1,1831 @@
+VPR FPGA Placement and Routing.
+Version: 8.1.0-dev+90ee6e663
+Revision: v8.0.0-7751-g90ee6e663
+Compiled: 2023-05-16T11:34:18
+Compiler: GNU 11.3.0 on Linux-5.19.0-38-generic x86_64
+Build Info: release IPO VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+vpr /home/yunus/efpga-project/openfpga_files/generic-fpga/run006/vpr_arch/and2/MIN_ROUTE_CHAN_WIDTH/arch/vpr_arch.xml and2.blif --clock_modeling route
+
+
+Architecture file: /home/yunus/efpga-project/openfpga_files/generic-fpga/run006/vpr_arch/and2/MIN_ROUTE_CHAN_WIDTH/arch/vpr_arch.xml
+Circuit name: and2
+
+# Loading Architecture Description
+Warning 1: Model 'io' input port 'outpad' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 2: Model 'io' output port 'inpad' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+mode 'io[physical]' is defined by user to be disabled in packing
+mode 'fle[physical]' is defined by user to be disabled in packing
+mode 'ble6[default]' is defined by user to be disabled in packing
+# Loading Architecture Description took 0.00 seconds (max_rss 23.1 MiB, delta_rss +0.0 MiB)
+
+Timing analysis: ON
+Circuit netlist file: and2.net
+Circuit placement file: and2.place
+Circuit routing file: and2.route
+Circuit SDC file: and2.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: ENABLED
+Router: ENABLED
+Analysis: ENABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : true
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: auto
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+PlacerOpts.place_freq: PLACE_ONCE
+PlacerOpts.place_algorithm: CRITICALITY_TIMING_PLACE
+PlacerOpts.pad_loc_type: FREE
+PlacerOpts.constraints_file: No constraints file given
+PlacerOpts.place_cost_exp: 1.000000
+PlacerOpts.place_chan_width: 100
+PlacerOpts.inner_loop_recompute_divider: 0
+PlacerOpts.recompute_crit_iter: 1
+PlacerOpts.timing_tradeoff: 0.500000
+PlacerOpts.td_place_exp_first: 1.000000
+PlacerOpts.td_place_exp_last: 8.000000
+PlacerOpts.delay_offset: 0.000000
+PlacerOpts.delay_ramp_delta_threshold: -1
+PlacerOpts.delay_ramp_slope: 0.000000
+PlacerOpts.tsu_rel_margin: 1.000000
+PlacerOpts.tsu_abs_margin: 0.000000
+PlacerOpts.post_place_timing_report_file: 
+PlacerOpts.allowed_tiles_for_delay_model: 
+PlacerOpts.delay_model_reducer: MIN
+PlacerOpts.delay_model_type: DELTA
+PlacerOpts.rlim_escape_fraction: 0.000000
+PlacerOpts.move_stats_file: 
+PlacerOpts.placement_saves_per_temperature: 0
+PlacerOpts.effort_scaling: CIRCUIT
+PlacerOpts.place_delta_delay_matrix_calculation_method: ASTAR_ROUTE
+PlaceOpts.seed: 0
+AnnealSched.type: AUTO_SCHED
+AnnealSched.inner_num: 0.500000
+
+RouterOpts.route_type: DETAILED
+RouterOpts.flat_routing: false
+RouterOpts.has_choking_spot: false
+RouterOpts.router_algorithm: TIMING_DRIVEN
+RouterOpts.base_cost_type: DELAY_NORMALIZED_LENGTH
+RouterOpts.fixed_channel_width: NO_FIXED_CHANNEL_WIDTH
+RouterOpts.check_route: FULL
+RouterOpts.trim_empty_chan: false
+RouterOpts.trim_obs_chan: false
+RouterOpts.acc_fac: 1.000000
+RouterOpts.bb_factor: 3
+RouterOpts.bend_cost: 0.000000
+RouterOpts.first_iter_pres_fac: 0.000000
+RouterOpts.initial_pres_fac: 0.500000
+RouterOpts.pres_fac_mult: 1.300000
+RouterOpts.max_router_iterations: 50
+RouterOpts.min_incremental_reroute_fanout: 16
+RouterOpts.do_check_rr_graph: true
+RouterOpts.verify_binary_search: false
+RouterOpts.min_channel_width_hint: 0
+RouterOpts.read_rr_edge_metadata: false
+RouterOpts.exit_after_first_routing_iteration: false
+RouterOpts.astar_fac: 1.200000
+RouterOpts.router_profiler_astar_fac: 1.200000
+RouterOpts.criticality_exp: 1.000000
+RouterOpts.max_criticality: 0.990000
+RouterOpts.init_wirelength_abort_threshold: 0.850000
+RouterOpts.save_routing_per_iteration: false
+RouterOpts.congested_routing_iteration_threshold_frac: 1.000000
+RouterOpts.high_fanout_threshold: 64
+RouterOpts.router_debug_net: -2
+RouterOpts.router_debug_sink_rr: -2
+RouterOpts.router_debug_iteration: -2
+RouterOpts.max_convergence_count: 1
+RouterOpts.reconvergence_cpd_threshold: 0.990000
+RouterOpts.update_lower_bound_delays: true
+RouterOpts.first_iteration_timing_report_file: 
+RouterOpts.incr_reroute_delay_ripup: AUTO
+RouterOpts.route_bb_update: DYNAMIC
+RouterOpts.lookahead_type: MAP
+RouterOpts.initial_timing: LOOKAHEAD
+RouterOpts.router_heap: BINARY_HEAP
+RouterOpts.routing_failure_predictor = SAFE
+RouterOpts.routing_budgets_algorithm = DISABLE
+
+AnalysisOpts.gen_post_synthesis_netlist: false
+AnalysisOpts.timing_report_npaths: 100
+AnalysisOpts.timing_report_skew: false
+AnalysisOpts.echo_dot_timing_graph_node: -1
+AnalysisOpts.timing_report_detail: NETLIST
+AnalysisOpts.post_synth_netlist_unconn_input_handling: UNCONNECTED
+AnalysisOpts.post_synth_netlist_unconn_output_handling: UNCONNECTED
+
+# Building complex block graph
+Warning 3: clb[0].O[10] unconnected pin in architecture.
+Warning 4: clb[0].O[11] unconnected pin in architecture.
+Warning 5: clb[0].O[12] unconnected pin in architecture.
+Warning 6: clb[0].O[13] unconnected pin in architecture.
+Warning 7: clb[0].O[14] unconnected pin in architecture.
+Warning 8: clb[0].O[15] unconnected pin in architecture.
+Warning 9: clb[0].O[16] unconnected pin in architecture.
+Warning 10: clb[0].O[17] unconnected pin in architecture.
+Warning 11: clb[0].O[18] unconnected pin in architecture.
+Warning 12: clb[0].O[19] unconnected pin in architecture.
+# Building complex block graph took 0.00 seconds (max_rss 23.1 MiB, delta_rss +0.0 MiB)
+Circuit file: and2.blif
+# Load circuit
+# Load circuit took 0.00 seconds (max_rss 23.1 MiB, delta_rss +0.0 MiB)
+# Clean circuit
+Absorbed 0 LUT buffers
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 0
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 0
+Swept block(s)      : 0
+Constant Pins Marked: 0
+# Clean circuit took 0.00 seconds (max_rss 23.1 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 0.00 seconds (max_rss 23.1 MiB, delta_rss +0.0 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 23.1 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 4
+    .input :       2
+    .output:       1
+    6-LUT  :       1
+  Nets  : 3
+    Avg Fanout:     1.0
+    Max Fanout:     1.0
+    Min Fanout:     1.0
+  Netlist Clocks: 0
+# Build Timing Graph
+  Timing Graph Nodes: 6
+  Timing Graph Edges: 5
+  Timing Graph Levels: 4
+# Build Timing Graph took 0.00 seconds (max_rss 23.1 MiB, delta_rss +0.0 MiB)
+Netlist contains 0 clocks
+# Load Timing Constraints
+
+SDC file 'and2.sdc' not found
+Setting default timing constraints:
+   * constrain all primay inputs and primary outputs on a virtual external clock 'virtual_io_clock'
+   * optimize virtual clock to run as fast as possible
+Timing constraints created 1 clocks
+  Constrained Clock 'virtual_io_clock' (Virtual Clock)
+
+# Load Timing Constraints took 0.00 seconds (max_rss 23.1 MiB, delta_rss +0.0 MiB)
+# Packing
+Warning 13: Specified device dimensions (10x10) exceed those of the largest fixed-size device. Using the largest fixed-size device
+Begin packing 'and2.blif'.
+
+After removing unused inputs...
+	total blocks: 4, total nets: 3, total inputs: 2, total outputs: 1
+Begin prepacking.
+0 attraction groups were created during prepacking.
+Finish prepacking.
+Using inter-cluster delay: 1.33777e-09
+Packing with pin utilization targets: io:1,1 clb:0.8,1
+Packing with high fanout thresholds: io:128 clb:32
+Starting Clustering - Clustering Progress: 
+-------------------   --------------------------   ---------
+Molecules processed   Number of clusters created   FPGA size
+-------------------   --------------------------   ---------
+
+Logic Element (fle) detailed count:
+  Total number of Logic Elements used : 1
+  LEs used for logic and registers    : 0
+  LEs used for logic only             : 1
+  LEs used for registers only         : 0
+
+Incr Slack updates 1 in 1.556e-06 sec
+Full Max Req/Worst Slack updates 1 in 1.339e-06 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 1.692e-06 sec
+FPGA sized to 4 x 4 (2x2)
+Device Utilization: 0.09 (target 1.00)
+	Block Utilization: 0.05 Type: io
+	Block Utilization: 0.25 Type: clb
+
+Start the iterative improvement process
+the iterative improvement process is done
+Final Clustering Statistics: 
+----------   --------   ------------------------------------   --------------------------
+Block Type   # Blocks   Avg. # of input clocks and pins used   Avg. # of output pins used
+----------   --------   ------------------------------------   --------------------------
+     EMPTY          0                                      0                            0   
+        io          3                               0.333333                     0.666667   
+       clb          1                                      2                            1   
+Absorbed logical nets 0 out of 3 nets, 3 nets not absorbed.
+
+Netlist conversion complete.
+
+# Packing took 0.00 seconds (max_rss 23.1 MiB, delta_rss +0.0 MiB)
+# Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file 'and2.net'.
+Detected 0 constant generators (to see names run with higher pack verbosity)
+Finished loading packed FPGA netlist file (took 0.022042 seconds).
+Warning 14: Treated 0 constant nets as global which will not be routed (to see net names increase packer verbosity).
+# Load packing took 0.02 seconds (max_rss 59.0 MiB, delta_rss +35.9 MiB)
+Warning 15: Netlist contains 0 global net to non-global architecture pin connections
+
+Pb types usage...
+  io         : 3
+   inpad     : 2
+   outpad    : 1
+  clb        : 1
+   fle       : 1
+    ble6     : 1
+     lut6    : 1
+      lut    : 1
+
+# Create Device
+## Build Device Grid
+FPGA sized to 4 x 4: 16 grid tiles (2x2)
+
+Resource usage...
+	Netlist
+		3	blocks of type: io
+	Architecture
+		64	blocks of type: io
+	Netlist
+		1	blocks of type: clb
+	Architecture
+		4	blocks of type: clb
+
+Device Utilization: 0.09 (target 1.00)
+	Physical Tile io:
+	Block Utilization: 0.05 Logical Block: io
+	Physical Tile clb:
+	Block Utilization: 0.25 Logical Block: clb
+
+## Build Device Grid took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Warning 16: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 100
+Y-direction routing channel width is 100
+## Build tileable routing resource graph took 0.01 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 1344
+  RR Graph Edges: 7512
+# Create Device took 0.01 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+# Computing router lookahead map
+## Computing wire lookahead
+## Computing wire lookahead took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Computing src/opin lookahead
+## Computing src/opin lookahead took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Computing router lookahead map took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Computing placement delta delay look-up
+Warning 17: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 64
+Y-direction routing channel width is 64
+## Build tileable routing resource graph took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 1068
+  RR Graph Edges: 5012
+## Computing router lookahead map
+### Computing wire lookahead
+### Computing wire lookahead took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+### Computing src/opin lookahead
+### Computing src/opin lookahead took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Computing router lookahead map took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Computing delta delays
+## Computing delta delays took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Computing placement delta delay look-up took 0.01 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Using simple RL 'Softmax agent' for choosing move types
+# Placement
+## Initial Placement
+Initial placement iteration 0 has finished successfully
+## Initial Placement took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+There are 3 point to point connections in this circuit.
+
+
+BB estimate of min-dist (placement) wire length: 8
+
+Completed placement consistency check successfully.
+Initial placement cost: 1 bb_cost: 0.125 td_cost: 5.89311e-10
+Initial placement estimated Critical Path Delay (CPD): 0.901689 ns
+Initial placement estimated setup Total Negative Slack (sTNS): -0.901689 ns
+Initial placement estimated setup Worst Negative Slack (sWNS): -0.901689 ns
+
+Initial placement estimated setup slack histogram:
+[   -9e-10:   -9e-10) 1 (100.0%) |**************************************************
+[   -9e-10:   -9e-10) 0 (  0.0%) |
+[   -9e-10:   -9e-10) 0 (  0.0%) |
+[   -9e-10:   -9e-10) 0 (  0.0%) |
+[   -9e-10:   -9e-10) 0 (  0.0%) |
+[   -9e-10:   -9e-10) 0 (  0.0%) |
+[   -9e-10:   -9e-10) 0 (  0.0%) |
+[   -9e-10:   -9e-10) 0 (  0.0%) |
+[   -9e-10:   -9e-10) 0 (  0.0%) |
+[   -9e-10:   -9e-10) 0 (  0.0%) |
+Placement contains 0 placement macros involving 0 blocks (average macro size -nan)
+
+Moves per temperature: 3
+Warning 18: Starting t: 2 of 3 configurations accepted.
+
+---- ------ ------- ------- ---------- ---------- ------- ---------- -------- ------- ------- ------ -------- --------- ------
+Tnum   Time       T Av Cost Av BB Cost Av TD Cost     CPD       sTNS     sWNS Ac Rate Std Dev  R lim Crit Exp Tot Moves  Alpha
+      (sec)                                          (ns)       (ns)     (ns)                                                 
+---- ------ ------- ------- ---------- ---------- ------- ---------- -------- ------- ------- ------ -------- --------- ------
+   1    0.0 1.4e-06   1.000       0.12 4.6013e-10   0.772     -0.772   -0.772   0.333  0.0000    3.0     1.00         3  0.200
+   2    0.0 0.0e+00   0.935       0.11 4.5825e-10   0.772     -0.772   -0.772   0.333  0.0000    3.0     1.00         6  0.950
+## Placement Quench took 0.00 seconds (max_rss 59.4 MiB)
+post-quench CPD = 0.771909 (ns) 
+
+BB estimate of min-dist (placement) wire length: 7
+
+Completed placement consistency check successfully.
+
+Swaps called: 9
+
+Aborted Move Reasons:
+  No moves aborted
+
+Placement estimated critical path delay (least slack): 0.771909 ns, Fmax: 1295.49 MHz
+Placement estimated setup Worst Negative Slack (sWNS): -0.771909 ns
+Placement estimated setup Total Negative Slack (sTNS): -0.771909 ns
+
+Placement estimated setup slack histogram:
+[ -7.7e-10: -7.7e-10) 1 (100.0%) |**************************************************
+[ -7.7e-10: -7.7e-10) 0 (  0.0%) |
+[ -7.7e-10: -7.7e-10) 0 (  0.0%) |
+[ -7.7e-10: -7.7e-10) 0 (  0.0%) |
+[ -7.7e-10: -7.7e-10) 0 (  0.0%) |
+[ -7.7e-10: -7.7e-10) 0 (  0.0%) |
+[ -7.7e-10: -7.7e-10) 0 (  0.0%) |
+[ -7.7e-10: -7.7e-10) 0 (  0.0%) |
+[ -7.7e-10: -7.7e-10) 0 (  0.0%) |
+[ -7.7e-10: -7.7e-10) 0 (  0.0%) |
+
+Placement estimated geomean non-virtual intra-domain period: nan ns (nan MHz)
+Placement estimated fanout-weighted geomean non-virtual intra-domain period: nan ns (nan MHz)
+
+Placement cost: 0.93546, bb_cost: 0.109375, td_cost: 4.57895e-10, 
+
+Placement resource usage:
+  io  implemented as io : 3
+  clb implemented as clb: 1
+
+Placement number of temperatures: 2
+Placement total # of swap attempts: 9
+	Swaps accepted: 4 (44.4 %)
+	Swaps rejected: 5 (55.6 %)
+	Swaps aborted : 0 ( 0.0 %)
+
+
+Percentage of different move types:
+	Uniform move: 66.67 % (acc=50.00 %, rej=50.00 %, aborted=0.00 %)
+	W. Centroid move: 11.11 % (acc=0.00 %, rej=100.00 %, aborted=0.00 %)
+	Feasible Region move: 22.22 % (acc=50.00 %, rej=50.00 %, aborted=0.00 %)
+
+Placement Quench timing analysis took 1.9652e-05 seconds (1.6852e-05 STA, 2.8e-06 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
+Placement Total  timing analysis took 5.5199e-05 seconds (3.9908e-05 STA, 1.5291e-05 slack) (4 full updates: 4 setup, 0 hold, 0 combined).
+update_td_costs: connections 0 nets 0 sum_nets 0 total 0
+# Placement took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+# Routing
+Initializing minimum channel width search based on maximum CLB pins
+
+Attempting to route at 62 channels (binary search bounds: [-1, -1])
+Warning 19: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 62
+Y-direction routing channel width is 62
+## Build tileable routing resource graph took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 1056
+  RR Graph Edges: 5000
+Confirming router algorithm: TIMING_DRIVEN.
+## Computing router lookahead map
+### Computing wire lookahead
+### Computing wire lookahead took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+### Computing src/opin lookahead
+### Computing src/opin lookahead took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Computing router lookahead map took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Initializing router criticalities
+Initial Net Connection Criticality Histogram:
+[        0:      0.1) 0 (  0.0%) |
+[      0.1:      0.2) 0 (  0.0%) |
+[      0.2:      0.3) 0 (  0.0%) |
+[      0.3:      0.4) 0 (  0.0%) |
+[      0.4:      0.5) 0 (  0.0%) |
+[      0.5:      0.6) 0 (  0.0%) |
+[      0.6:      0.7) 0 (  0.0%) |
+[      0.7:      0.8) 0 (  0.0%) |
+[      0.8:      0.9) 0 (  0.0%) |
+[      0.9:        1) 3 (100.0%) |*************************************************
+## Initializing router criticalities took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.0     0.0    0     164       3       3       0 ( 0.000%)      12 ( 1.6%)    1.039     -1.039     -1.039      0.000      0.000      N/A
+Incr Slack updates 4 in 3.882e-06 sec
+Full Max Req/Worst Slack updates 2 in 2.441e-06 sec
+Incr Max Req/Worst Slack updates 2 in 1.633e-06 sec
+Incr Criticality updates 2 in 1.889e-06 sec
+Full Criticality updates 2 in 2.53e-06 sec
+Restoring best routing
+Critical path: 1.03918 ns
+Successfully routed after 1 routing iterations.
+Final Net Connection Criticality Histogram:
+[        0:      0.1) 0 (  0.0%) |
+[      0.1:      0.2) 0 (  0.0%) |
+[      0.2:      0.3) 0 (  0.0%) |
+[      0.3:      0.4) 0 (  0.0%) |
+[      0.4:      0.5) 0 (  0.0%) |
+[      0.5:      0.6) 0 (  0.0%) |
+[      0.6:      0.7) 0 (  0.0%) |
+[      0.7:      0.8) 0 (  0.0%) |
+[      0.8:      0.9) 0 (  0.0%) |
+[      0.9:        1) 3 (100.0%) |*************************************************
+Router Stats: total_nets_routed: 3 total_connections_routed: 3 total_heap_pushes: 164 total_heap_pops: 94 total_internal_heap_pushes: 0 total_internal_heap_pops: 0 total_external_heap_pushes: 164 total_external_heap_pops: 94 total_external_SOURCE_pushes: 3 total_external_SOURCE_pops: 3 total_internal_SOURCE_pushes: 0 total_internal_SOURCE_pops: 0 rt_node_SOURCE_pushes: 3 rt_node_SOURCE_high_fanout_pushes: 0 rt_node_SOURCE_entire_tree_pushes: 3 total_external_SINK_pushes: 14 total_external_SINK_pops: 13 total_internal_SINK_pushes: 0 total_internal_SINK_pops: 0 rt_node_SINK_pushes: 0 rt_node_SINK_high_fanout_pushes: 0 rt_node_SINK_entire_tree_pushes: 0 total_external_IPIN_pushes: 14 total_external_IPIN_pops: 14 total_internal_IPIN_pushes: 0 total_internal_IPIN_pops: 0 rt_node_IPIN_pushes: 0 rt_node_IPIN_high_fanout_pushes: 0 rt_node_IPIN_entire_tree_pushes: 0 total_external_OPIN_pushes: 3 total_external_OPIN_pops: 3 total_internal_OPIN_pushes: 0 total_internal_OPIN_pops: 0 rt_node_OPIN_pushes: 0 rt_node_OPIN_high_fanout_pushes: 0 rt_node_OPIN_entire_tree_pushes: 0 total_external_CHANX_pushes: 61 total_external_CHANX_pops: 34 total_internal_CHANX_pushes: 0 total_internal_CHANX_pops: 0 rt_node_CHANX_pushes: 0 rt_node_CHANX_high_fanout_pushes: 0 rt_node_CHANX_entire_tree_pushes: 0 total_external_CHANY_pushes: 69 total_external_CHANY_pops: 27 total_internal_CHANY_pushes: 0 total_internal_CHANY_pops: 0 rt_node_CHANY_pushes: 0 rt_node_CHANY_high_fanout_pushes: 0 rt_node_CHANY_entire_tree_pushes: 0 total_number_of_adding_all_rt: 3 total_number_of_adding_high_fanout_rt: 0 total_number_of_adding_all_rt_from_calling_high_fanout_rt: 0 
+
+Attempting to route at 32 channels (binary search bounds: [-1, 62])
+Warning 20: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 32
+Y-direction routing channel width is 32
+## Build tileable routing resource graph took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 828
+  RR Graph Edges: 2868
+Confirming router algorithm: TIMING_DRIVEN.
+## Computing router lookahead map
+### Computing wire lookahead
+### Computing wire lookahead took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+### Computing src/opin lookahead
+### Computing src/opin lookahead took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Computing router lookahead map took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Initializing router criticalities
+Initial Net Connection Criticality Histogram:
+[        0:      0.1) 0 (  0.0%) |
+[      0.1:      0.2) 0 (  0.0%) |
+[      0.2:      0.3) 0 (  0.0%) |
+[      0.3:      0.4) 0 (  0.0%) |
+[      0.4:      0.5) 0 (  0.0%) |
+[      0.5:      0.6) 0 (  0.0%) |
+[      0.6:      0.7) 0 (  0.0%) |
+[      0.7:      0.8) 0 (  0.0%) |
+[      0.8:      0.9) 0 (  0.0%) |
+[      0.9:        1) 3 (100.0%) |*************************************************
+## Initializing router criticalities took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.0     0.0    0      73       3       3       0 ( 0.000%)      11 ( 2.9%)    0.977    -0.9769     -0.977      0.000      0.000      N/A
+Restoring best routing
+Critical path: 0.976936 ns
+Successfully routed after 1 routing iterations.
+Final Net Connection Criticality Histogram:
+[        0:      0.1) 0 (  0.0%) |
+[      0.1:      0.2) 0 (  0.0%) |
+[      0.2:      0.3) 0 (  0.0%) |
+[      0.3:      0.4) 0 (  0.0%) |
+[      0.4:      0.5) 0 (  0.0%) |
+[      0.5:      0.6) 0 (  0.0%) |
+[      0.6:      0.7) 0 (  0.0%) |
+[      0.7:      0.8) 0 (  0.0%) |
+[      0.8:      0.9) 0 (  0.0%) |
+[      0.9:        1) 3 (100.0%) |*************************************************
+Router Stats: total_nets_routed: 3 total_connections_routed: 3 total_heap_pushes: 73 total_heap_pops: 40 total_internal_heap_pushes: 0 total_internal_heap_pops: 0 total_external_heap_pushes: 73 total_external_heap_pops: 40 total_external_SOURCE_pushes: 3 total_external_SOURCE_pops: 3 total_internal_SOURCE_pushes: 0 total_internal_SOURCE_pops: 0 rt_node_SOURCE_pushes: 3 rt_node_SOURCE_high_fanout_pushes: 0 rt_node_SOURCE_entire_tree_pushes: 3 total_external_SINK_pushes: 10 total_external_SINK_pops: 6 total_internal_SINK_pushes: 0 total_internal_SINK_pops: 0 rt_node_SINK_pushes: 0 rt_node_SINK_high_fanout_pushes: 0 rt_node_SINK_entire_tree_pushes: 0 total_external_IPIN_pushes: 10 total_external_IPIN_pops: 10 total_internal_IPIN_pushes: 0 total_internal_IPIN_pops: 0 rt_node_IPIN_pushes: 0 rt_node_IPIN_high_fanout_pushes: 0 rt_node_IPIN_entire_tree_pushes: 0 total_external_OPIN_pushes: 3 total_external_OPIN_pops: 3 total_internal_OPIN_pushes: 0 total_internal_OPIN_pops: 0 rt_node_OPIN_pushes: 0 rt_node_OPIN_high_fanout_pushes: 0 rt_node_OPIN_entire_tree_pushes: 0 total_external_CHANX_pushes: 22 total_external_CHANX_pops: 10 total_internal_CHANX_pushes: 0 total_internal_CHANX_pops: 0 rt_node_CHANX_pushes: 0 rt_node_CHANX_high_fanout_pushes: 0 rt_node_CHANX_entire_tree_pushes: 0 total_external_CHANY_pushes: 25 total_external_CHANY_pops: 8 total_internal_CHANY_pushes: 0 total_internal_CHANY_pops: 0 rt_node_CHANY_pushes: 0 rt_node_CHANY_high_fanout_pushes: 0 rt_node_CHANY_entire_tree_pushes: 0 total_number_of_adding_all_rt: 3 total_number_of_adding_high_fanout_rt: 0 total_number_of_adding_all_rt_from_calling_high_fanout_rt: 0 
+
+Attempting to route at 16 channels (binary search bounds: [-1, 32])
+Warning 21: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 16
+Y-direction routing channel width is 16
+## Build tileable routing resource graph took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 708
+  RR Graph Edges: 1476
+Confirming router algorithm: TIMING_DRIVEN.
+## Computing router lookahead map
+### Computing wire lookahead
+### Computing wire lookahead took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+### Computing src/opin lookahead
+Warning 22: Found no more sample locations for SOURCE in clb
+Warning 23: Found no more sample locations for OPIN in clb
+### Computing src/opin lookahead took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Computing router lookahead map took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Initializing router criticalities
+Initial Net Connection Criticality Histogram:
+[        0:      0.1) 0 (  0.0%) |
+[      0.1:      0.2) 0 (  0.0%) |
+[      0.2:      0.3) 0 (  0.0%) |
+[      0.3:      0.4) 0 (  0.0%) |
+[      0.4:      0.5) 0 (  0.0%) |
+[      0.5:      0.6) 0 (  0.0%) |
+[      0.6:      0.7) 0 (  0.0%) |
+[      0.7:      0.8) 0 (  0.0%) |
+[      0.8:      0.9) 0 (  0.0%) |
+[      0.9:        1) 3 (100.0%) |*************************************************
+## Initializing router criticalities took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.0     0.0    0      41       3       3       0 ( 0.000%)       9 ( 4.7%)    0.964    -0.9639     -0.964      0.000      0.000      N/A
+Restoring best routing
+Critical path: 0.963937 ns
+Successfully routed after 1 routing iterations.
+Final Net Connection Criticality Histogram:
+[        0:      0.1) 0 (  0.0%) |
+[      0.1:      0.2) 0 (  0.0%) |
+[      0.2:      0.3) 0 (  0.0%) |
+[      0.3:      0.4) 0 (  0.0%) |
+[      0.4:      0.5) 0 (  0.0%) |
+[      0.5:      0.6) 0 (  0.0%) |
+[      0.6:      0.7) 0 (  0.0%) |
+[      0.7:      0.8) 0 (  0.0%) |
+[      0.8:      0.9) 0 (  0.0%) |
+[      0.9:        1) 3 (100.0%) |*************************************************
+Router Stats: total_nets_routed: 3 total_connections_routed: 3 total_heap_pushes: 41 total_heap_pops: 25 total_internal_heap_pushes: 0 total_internal_heap_pops: 0 total_external_heap_pushes: 41 total_external_heap_pops: 25 total_external_SOURCE_pushes: 3 total_external_SOURCE_pops: 3 total_internal_SOURCE_pushes: 0 total_internal_SOURCE_pops: 0 rt_node_SOURCE_pushes: 3 rt_node_SOURCE_high_fanout_pushes: 0 rt_node_SOURCE_entire_tree_pushes: 3 total_external_SINK_pushes: 4 total_external_SINK_pops: 4 total_internal_SINK_pushes: 0 total_internal_SINK_pops: 0 rt_node_SINK_pushes: 0 rt_node_SINK_high_fanout_pushes: 0 rt_node_SINK_entire_tree_pushes: 0 total_external_IPIN_pushes: 4 total_external_IPIN_pops: 4 total_internal_IPIN_pushes: 0 total_internal_IPIN_pops: 0 rt_node_IPIN_pushes: 0 rt_node_IPIN_high_fanout_pushes: 0 rt_node_IPIN_entire_tree_pushes: 0 total_external_OPIN_pushes: 3 total_external_OPIN_pops: 3 total_internal_OPIN_pushes: 0 total_internal_OPIN_pops: 0 rt_node_OPIN_pushes: 0 rt_node_OPIN_high_fanout_pushes: 0 rt_node_OPIN_entire_tree_pushes: 0 total_external_CHANX_pushes: 13 total_external_CHANX_pops: 5 total_internal_CHANX_pushes: 0 total_internal_CHANX_pops: 0 rt_node_CHANX_pushes: 0 rt_node_CHANX_high_fanout_pushes: 0 rt_node_CHANX_entire_tree_pushes: 0 total_external_CHANY_pushes: 14 total_external_CHANY_pops: 6 total_internal_CHANY_pushes: 0 total_internal_CHANY_pops: 0 rt_node_CHANY_pushes: 0 rt_node_CHANY_high_fanout_pushes: 0 rt_node_CHANY_entire_tree_pushes: 0 total_number_of_adding_all_rt: 3 total_number_of_adding_high_fanout_rt: 0 total_number_of_adding_all_rt_from_calling_high_fanout_rt: 0 
+
+Attempting to route at 8 channels (binary search bounds: [-1, 16])
+Warning 24: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 8
+Y-direction routing channel width is 8
+Warning 25: in check_rr_graph: fringe node 144 IPIN at (1,1) has no fanin.
+	 This is possible on a fringe node based on low Fc_out, N, and certain lengths.
+## Build tileable routing resource graph took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 648
+  RR Graph Edges: 1056
+Confirming router algorithm: TIMING_DRIVEN.
+## Computing router lookahead map
+### Computing wire lookahead
+### Computing wire lookahead took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+### Computing src/opin lookahead
+Warning 26: Found no more sample locations for SOURCE in clb
+Warning 27: Found no more sample locations for OPIN in clb
+### Computing src/opin lookahead took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Computing router lookahead map took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Initializing router criticalities
+Initial Net Connection Criticality Histogram:
+[        0:      0.1) 0 (  0.0%) |
+[      0.1:      0.2) 0 (  0.0%) |
+[      0.2:      0.3) 0 (  0.0%) |
+[      0.3:      0.4) 0 (  0.0%) |
+[      0.4:      0.5) 0 (  0.0%) |
+[      0.5:      0.6) 0 (  0.0%) |
+[      0.6:      0.7) 0 (  0.0%) |
+[      0.7:      0.8) 0 (  0.0%) |
+[      0.8:      0.9) 0 (  0.0%) |
+[      0.9:        1) 3 (100.0%) |*************************************************
+## Initializing router criticalities took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Warning 28: No routing path for connection to sink_rr 42, retrying with full device bounding box
+Cannot route from clb[0].O[9] (RR node: 188 class: 10 capacity: 1 fan-in: 0 fan-out: 1 SOURCE:188 (2,1)) to io[2].outpad[0] (RR node: 42 class: 4 capacity: 1 fan-in: 1 fan-out: 0 SINK:42 (2,0)) -- no possible path
+Failed to route connection from 'c' to 'out:c' for net 'c' (#2)
+Routing failed for net 2
+
+Attempting to route at 12 channels (binary search bounds: [8, 16])
+Warning 29: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 12
+Y-direction routing channel width is 12
+Warning 30: in check_rr_graph: fringe node 147 IPIN at (1,1) has no fanin.
+	 This is possible on a fringe node based on low Fc_out, N, and certain lengths.
+## Build tileable routing resource graph took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 684
+  RR Graph Edges: 1260
+Confirming router algorithm: TIMING_DRIVEN.
+## Computing router lookahead map
+### Computing wire lookahead
+### Computing wire lookahead took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+### Computing src/opin lookahead
+Warning 31: Found no more sample locations for SOURCE in clb
+Warning 32: Found no more sample locations for OPIN in clb
+### Computing src/opin lookahead took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Computing router lookahead map took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Initializing router criticalities
+Initial Net Connection Criticality Histogram:
+[        0:      0.1) 0 (  0.0%) |
+[      0.1:      0.2) 0 (  0.0%) |
+[      0.2:      0.3) 0 (  0.0%) |
+[      0.3:      0.4) 0 (  0.0%) |
+[      0.4:      0.5) 0 (  0.0%) |
+[      0.5:      0.6) 0 (  0.0%) |
+[      0.6:      0.7) 0 (  0.0%) |
+[      0.7:      0.8) 0 (  0.0%) |
+[      0.8:      0.9) 0 (  0.0%) |
+[      0.9:        1) 3 (100.0%) |*************************************************
+## Initializing router criticalities took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.0     0.0    0      85       3       3       0 ( 0.000%)      13 ( 9.0%)    1.097     -1.097     -1.097      0.000      0.000      N/A
+Restoring best routing
+Critical path: 1.09657 ns
+Successfully routed after 1 routing iterations.
+Final Net Connection Criticality Histogram:
+[        0:      0.1) 0 (  0.0%) |
+[      0.1:      0.2) 0 (  0.0%) |
+[      0.2:      0.3) 0 (  0.0%) |
+[      0.3:      0.4) 0 (  0.0%) |
+[      0.4:      0.5) 0 (  0.0%) |
+[      0.5:      0.6) 0 (  0.0%) |
+[      0.6:      0.7) 0 (  0.0%) |
+[      0.7:      0.8) 0 (  0.0%) |
+[      0.8:      0.9) 1 ( 33.3%) |*************************
+[      0.9:        1) 2 ( 66.7%) |*************************************************
+Router Stats: total_nets_routed: 3 total_connections_routed: 3 total_heap_pushes: 85 total_heap_pops: 52 total_internal_heap_pushes: 0 total_internal_heap_pops: 0 total_external_heap_pushes: 85 total_external_heap_pops: 52 total_external_SOURCE_pushes: 3 total_external_SOURCE_pops: 3 total_internal_SOURCE_pushes: 0 total_internal_SOURCE_pops: 0 rt_node_SOURCE_pushes: 3 rt_node_SOURCE_high_fanout_pushes: 0 rt_node_SOURCE_entire_tree_pushes: 3 total_external_SINK_pushes: 9 total_external_SINK_pops: 8 total_internal_SINK_pushes: 0 total_internal_SINK_pops: 0 rt_node_SINK_pushes: 0 rt_node_SINK_high_fanout_pushes: 0 rt_node_SINK_entire_tree_pushes: 0 total_external_IPIN_pushes: 9 total_external_IPIN_pops: 9 total_internal_IPIN_pushes: 0 total_internal_IPIN_pops: 0 rt_node_IPIN_pushes: 0 rt_node_IPIN_high_fanout_pushes: 0 rt_node_IPIN_entire_tree_pushes: 0 total_external_OPIN_pushes: 3 total_external_OPIN_pops: 3 total_internal_OPIN_pushes: 0 total_internal_OPIN_pops: 0 rt_node_OPIN_pushes: 0 rt_node_OPIN_high_fanout_pushes: 0 rt_node_OPIN_entire_tree_pushes: 0 total_external_CHANX_pushes: 29 total_external_CHANX_pops: 15 total_internal_CHANX_pushes: 0 total_internal_CHANX_pops: 0 rt_node_CHANX_pushes: 0 rt_node_CHANX_high_fanout_pushes: 0 rt_node_CHANX_entire_tree_pushes: 0 total_external_CHANY_pushes: 32 total_external_CHANY_pops: 14 total_internal_CHANY_pushes: 0 total_internal_CHANY_pops: 0 rt_node_CHANY_pushes: 0 rt_node_CHANY_high_fanout_pushes: 0 rt_node_CHANY_entire_tree_pushes: 0 total_number_of_adding_all_rt: 3 total_number_of_adding_high_fanout_rt: 0 total_number_of_adding_all_rt_from_calling_high_fanout_rt: 0 
+
+Attempting to route at 10 channels (binary search bounds: [8, 12])
+Warning 33: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 10
+Y-direction routing channel width is 10
+Warning 34: in check_rr_graph: fringe node 146 IPIN at (1,1) has no fanin.
+	 This is possible on a fringe node based on low Fc_out, N, and certain lengths.
+## Build tileable routing resource graph took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 672
+  RR Graph Edges: 1152
+Confirming router algorithm: TIMING_DRIVEN.
+## Computing router lookahead map
+### Computing wire lookahead
+### Computing wire lookahead took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+### Computing src/opin lookahead
+Warning 35: Found no more sample locations for SOURCE in clb
+Warning 36: Found no more sample locations for OPIN in clb
+### Computing src/opin lookahead took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Computing router lookahead map took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Initializing router criticalities
+Initial Net Connection Criticality Histogram:
+[        0:      0.1) 0 (  0.0%) |
+[      0.1:      0.2) 0 (  0.0%) |
+[      0.2:      0.3) 0 (  0.0%) |
+[      0.3:      0.4) 0 (  0.0%) |
+[      0.4:      0.5) 0 (  0.0%) |
+[      0.5:      0.6) 0 (  0.0%) |
+[      0.6:      0.7) 0 (  0.0%) |
+[      0.7:      0.8) 0 (  0.0%) |
+[      0.8:      0.9) 0 (  0.0%) |
+[      0.9:        1) 3 (100.0%) |*************************************************
+## Initializing router criticalities took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.0     0.0    0      43       3       3       1 ( 0.149%)       9 ( 7.5%)    0.966    -0.9664     -0.966      0.000      0.000      N/A
+   2    0.0     0.5    0       7       1       1       0 ( 0.000%)       9 ( 7.5%)    0.966    -0.9664     -0.966      0.000      0.000      N/A
+Restoring best routing
+Critical path: 0.966367 ns
+Successfully routed after 2 routing iterations.
+Final Net Connection Criticality Histogram:
+[        0:      0.1) 0 (  0.0%) |
+[      0.1:      0.2) 0 (  0.0%) |
+[      0.2:      0.3) 0 (  0.0%) |
+[      0.3:      0.4) 0 (  0.0%) |
+[      0.4:      0.5) 0 (  0.0%) |
+[      0.5:      0.6) 0 (  0.0%) |
+[      0.6:      0.7) 0 (  0.0%) |
+[      0.7:      0.8) 0 (  0.0%) |
+[      0.8:      0.9) 0 (  0.0%) |
+[      0.9:        1) 3 (100.0%) |*************************************************
+Router Stats: total_nets_routed: 4 total_connections_routed: 4 total_heap_pushes: 50 total_heap_pops: 31 total_internal_heap_pushes: 0 total_internal_heap_pops: 0 total_external_heap_pushes: 50 total_external_heap_pops: 31 total_external_SOURCE_pushes: 4 total_external_SOURCE_pops: 4 total_internal_SOURCE_pushes: 0 total_internal_SOURCE_pops: 0 rt_node_SOURCE_pushes: 4 rt_node_SOURCE_high_fanout_pushes: 0 rt_node_SOURCE_entire_tree_pushes: 4 total_external_SINK_pushes: 6 total_external_SINK_pops: 5 total_internal_SINK_pushes: 0 total_internal_SINK_pops: 0 rt_node_SINK_pushes: 0 rt_node_SINK_high_fanout_pushes: 0 rt_node_SINK_entire_tree_pushes: 0 total_external_IPIN_pushes: 6 total_external_IPIN_pops: 6 total_internal_IPIN_pushes: 0 total_internal_IPIN_pops: 0 rt_node_IPIN_pushes: 0 rt_node_IPIN_high_fanout_pushes: 0 rt_node_IPIN_entire_tree_pushes: 0 total_external_OPIN_pushes: 4 total_external_OPIN_pops: 4 total_internal_OPIN_pushes: 0 total_internal_OPIN_pops: 0 rt_node_OPIN_pushes: 0 rt_node_OPIN_high_fanout_pushes: 0 rt_node_OPIN_entire_tree_pushes: 0 total_external_CHANX_pushes: 15 total_external_CHANX_pops: 6 total_internal_CHANX_pushes: 0 total_internal_CHANX_pops: 0 rt_node_CHANX_pushes: 0 rt_node_CHANX_high_fanout_pushes: 0 rt_node_CHANX_entire_tree_pushes: 0 total_external_CHANY_pushes: 15 total_external_CHANY_pops: 6 total_internal_CHANY_pushes: 0 total_internal_CHANY_pops: 0 rt_node_CHANY_pushes: 0 rt_node_CHANY_high_fanout_pushes: 0 rt_node_CHANY_entire_tree_pushes: 0 total_number_of_adding_all_rt: 4 total_number_of_adding_high_fanout_rt: 0 total_number_of_adding_all_rt_from_calling_high_fanout_rt: 0 
+Warning 37: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 10
+Y-direction routing channel width is 10
+Warning 38: in check_rr_graph: fringe node 146 IPIN at (1,1) has no fanin.
+	 This is possible on a fringe node based on low Fc_out, N, and certain lengths.
+## Build tileable routing resource graph took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 672
+  RR Graph Edges: 1152
+Best routing used a channel width factor of 10.
+# Routing took 0.02 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Checking to ensure routing is legal...
+# Checking to ensure non-configurable edges are legal
+# Checking to ensure non-configurable edges are legal took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: -14450
+Circuit successfully routed with a channel width factor of 10.
+# Synchronize the packed netlist to routing optimization
+## Annotating rr_node with routed nets
+## Annotating rr_node with routed nets took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Found 4 mismatches between routing and packing results.
+Fixed 2 routing traces due to mismatch between routing and packing results.
+# Synchronize the packed netlist to routing optimization took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Final Clustering Statistics: 
+----------   --------   ------------------------------------   --------------------------
+Block Type   # Blocks   Avg. # of input clocks and pins used   Avg. # of output pins used
+----------   --------   ------------------------------------   --------------------------
+     EMPTY          0                                      0                            0   
+        io          3                               0.333333                     0.666667   
+       clb          1                                      2                            1   
+Absorbed logical nets 0 out of 3 nets, 3 nets not absorbed.
+
+
+Average number of bends per net: 1.33333  Maximum # of bends: 3
+
+Number of global nets: 0
+Number of routed nets (nonglobal): 3
+Wire length results (in units of 1 clb segments)...
+	Total wirelength: 9, average net length: 3.00000
+	Maximum net length: 5
+
+Wire length results in terms of physical segments...
+	Total wiring segments used: 7, average wire segments per net: 2.33333
+	Maximum segments used by a net: 4
+	Total local nets with reserved CLB opins: 0
+Total number of nets absorbed: 0
+
+Routing channel utilization histogram:
+[        1:      inf)  0 (  0.0%) |
+[      0.9:        1)  0 (  0.0%) |
+[      0.8:      0.9)  0 (  0.0%) |
+[      0.7:      0.8)  0 (  0.0%) |
+[      0.5:      0.6)  0 (  0.0%) |
+[      0.4:      0.5)  0 (  0.0%) |
+[      0.3:      0.4)  0 (  0.0%) |
+[      0.2:      0.3)  2 ( 11.1%) |******
+[      0.1:      0.2)  0 (  0.0%) |
+[        0:      0.1) 16 ( 88.9%) |************************************************
+Maximum routing channel utilization:       0.3 at (2,0)
+
+X - Directed channels:   j max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       3   1.000       10
+                         1       1   0.250       10
+                         2       0   0.000       10
+Y - Directed channels:   i max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       1   0.250       10
+                         1       1   0.250       10
+                         2       1   0.500       10
+
+Total tracks in x-direction: 30, in y-direction: 30
+
+Logic area (in minimum width transistor areas, excludes I/Os and empty grid tiles)...
+	Total logic block area (Warning, need to add pitch of routing to blocks with height > 3): 215576
+	Total used logic block area: 53894
+
+Routing area (in minimum width transistor areas)...
+	Total routing area: 7173.79, per logic tile: 448.362
+
+Total Number of Wiring Segments by Direction: direction length number
+                                              --------- ------ -------
+                                                      X      4     42
+                                                      Y      4     42
+
+X - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                            4      0.0952
+
+Y - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                            4      0.0714
+
+Segment usage by type (index): name type utilization
+                               ---- ---- -----------
+                                 L4    0       0.167
+
+Final hold Worst Negative Slack (hWNS): 0 ns
+Final hold Total Negative Slack (hTNS): 0 ns
+
+Final hold slack histogram:
+[  7.2e-10:  7.2e-10) 1 (100.0%) |**************************************************
+[  7.2e-10:  7.2e-10) 0 (  0.0%) |
+[  7.2e-10:  7.2e-10) 0 (  0.0%) |
+[  7.2e-10:  7.2e-10) 0 (  0.0%) |
+[  7.2e-10:  7.2e-10) 0 (  0.0%) |
+[  7.2e-10:  7.2e-10) 0 (  0.0%) |
+[  7.2e-10:  7.2e-10) 0 (  0.0%) |
+[  7.2e-10:  7.2e-10) 0 (  0.0%) |
+[  7.2e-10:  7.2e-10) 0 (  0.0%) |
+[  7.2e-10:  7.2e-10) 0 (  0.0%) |
+
+Final critical path delay (least slack): 0.966367 ns, Fmax: 1034.8 MHz
+Final setup Worst Negative Slack (sWNS): -0.966367 ns
+Final setup Total Negative Slack (sTNS): -0.966367 ns
+
+Final setup slack histogram:
+[ -9.7e-10: -9.7e-10) 1 (100.0%) |**************************************************
+[ -9.7e-10: -9.7e-10) 0 (  0.0%) |
+[ -9.7e-10: -9.7e-10) 0 (  0.0%) |
+[ -9.7e-10: -9.7e-10) 0 (  0.0%) |
+[ -9.7e-10: -9.7e-10) 0 (  0.0%) |
+[ -9.7e-10: -9.7e-10) 0 (  0.0%) |
+[ -9.7e-10: -9.7e-10) 0 (  0.0%) |
+[ -9.7e-10: -9.7e-10) 0 (  0.0%) |
+[ -9.7e-10: -9.7e-10) 0 (  0.0%) |
+[ -9.7e-10: -9.7e-10) 0 (  0.0%) |
+
+Final geomean non-virtual intra-domain period: nan ns (nan MHz)
+Final fanout-weighted geomean non-virtual intra-domain period: nan ns (nan MHz)
+
+Incr Slack updates 1 in 1.588e-06 sec
+Full Max Req/Worst Slack updates 1 in 1.086e-06 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 1.177e-06 sec
+Flow timing analysis took 0.000207475 seconds (0.000132687 STA, 7.4788e-05 slack) (18 full updates: 5 setup, 0 hold, 13 combined).
+VPR suceeded
+The entire flow of VPR took 0.11 seconds (max_rss 59.4 MiB)
+
+Command line to execute: read_openfpga_arch -f /home/yunus/efpga-project/openfpga_files/generic-fpga/run006/vpr_arch/and2/MIN_ROUTE_CHAN_WIDTH/arch/openfpga_arch.xml
+
+Confirm selected options when call command 'read_openfpga_arch':
+--file, -f: /home/yunus/efpga-project/openfpga_files/generic-fpga/run006/vpr_arch/and2/MIN_ROUTE_CHAN_WIDTH/arch/openfpga_arch.xml
+Reading XML architecture '/home/yunus/efpga-project/openfpga_files/generic-fpga/run006/vpr_arch/and2/MIN_ROUTE_CHAN_WIDTH/arch/openfpga_arch.xml'...
+Read OpenFPGA architecture
+Warning 39: Automatically set circuit model 'lut6' to be default in its type.
+Warning 40: Automatically set circuit model 'DFFSRQ' to be default in its type.
+Warning 41: Automatically set circuit model 'DFFR' to be default in its type.
+Warning 42: Automatically set circuit model 'GPIO' to be default in its type.
+Use the default configurable memory model 'DFFR' for circuit model 'mux_2level' port 'sram')
+Use the default configurable memory model 'DFFR' for circuit model 'mux_2level_tapbuf' port 'sram')
+Use the default configurable memory model 'DFFR' for circuit model 'mux_1level_tapbuf' port 'sram')
+Use the default configurable memory model 'DFFR' for circuit model 'lut6' port 'sram')
+Read OpenFPGA architecture took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Check circuit library
+Checking circuit library passed.
+Check circuit library took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Found 0 errors when checking configurable memory circuit models!
+Found 0 errors when checking configuration protocol!
+Found 0 errors when checking tile annotation!
+
+Command line to execute: read_openfpga_simulation_setting -f /home/yunus/OpenFPGA/openfpga_flow/openfpga_simulation_settings/fixed_sim_openfpga.xml
+
+Confirm selected options when call command 'read_openfpga_simulation_setting':
+--file, -f: /home/yunus/OpenFPGA/openfpga_flow/openfpga_simulation_settings/fixed_sim_openfpga.xml
+Reading XML simulation setting '/home/yunus/OpenFPGA/openfpga_flow/openfpga_simulation_settings/fixed_sim_openfpga.xml'...
+Read OpenFPGA simulation settings
+Read OpenFPGA simulation settings took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: link_openfpga_arch --activity_file and2_ace_out.act --sort_gsb_chan_node_in_edges
+
+Confirm selected options when call command 'link_openfpga_arch':
+--activity_file: and2_ace_out.act
+--sort_gsb_chan_node_in_edges: on
+--verbose: off
+Link OpenFPGA architecture to VPR architecture
+# Build fast look-up for physical tile pins
+# Build fast look-up for physical tile pins took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Building annotation for physical modes in pb_type...Done
+Check physical mode annotation for pb_types passed.
+
+Building annotation about physical types for pb_type interconnection...Done
+
+Building annotation between operating and physical pb_types...Done
+Check physical pb_type annotation for pb_types passed.
+
+Building annotation between physical pb_types and circuit models...Done
+Check physical pb_type annotation for circuit model passed.
+
+Building annotation between physical pb_types and mode selection bits...Done
+Check pb_type annotation for mode selection bits passed.
+Assigning unique indices for primitive pb_graph nodes...Done
+Binding operating pb_graph nodes/pins to physical pb_graph nodes/pins...Done
+Check pb_graph annotation for physical nodes and pins passed.
+Binded 2 routing resource graph switches to circuit models
+Binded 1 routing segments to circuit models
+Binded 0 direct connections to circuit models
+# Annotating rr_node with routed nets
+# Annotating rr_node with routed nets took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Loaded node-to-net mapping
+Annotating previous nodes for rr_node...Warning 43: Override the previous node 'IPIN:246 side: (BOTTOM,) (2,1)' by previous node 'IPIN:244 side: (BOTTOM,) (2,1)' for node 'SINK:199 (2,1)' with in routing context annotation!
+Done with 16 nodes mapping
+Built 1152 incoming edges for routing resource graph
+# Build General Switch Block(GSB) annotation on top of routing resource graph
+[11%] Backannotated GSB[0][0][22%] Backannotated GSB[0][1][33%] Backannotated GSB[0][2][44%] Backannotated GSB[1][0][55%] Backannotated GSB[1][1][66%] Backannotated GSB[1][2][77%] Backannotated GSB[2][0][88%] Backannotated GSB[2][1][100%] Backannotated GSB[2][2]Backannotated 9 General Switch Blocks (GSBs).
+# Build General Switch Block(GSB) annotation on top of routing resource graph took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Sort incoming edges for each routing track output node of General Switch Block(GSB)
+[11%] Sorted incoming edges for each routing track output node of GSB[0][0][22%] Sorted incoming edges for each routing track output node of GSB[0][1][33%] Sorted incoming edges for each routing track output node of GSB[0][2][44%] Sorted incoming edges for each routing track output node of GSB[1][0][55%] Sorted incoming edges for each routing track output node of GSB[1][1][66%] Sorted incoming edges for each routing track output node of GSB[1][2][77%] Sorted incoming edges for each routing track output node of GSB[2][0][88%] Sorted incoming edges for each routing track output node of GSB[2][1][100%] Sorted incoming edges for each routing track output node of GSB[2][2]Sorted incoming edges for each routing track output node of 9 General Switch Blocks (GSBs).
+# Sort incoming edges for each routing track output node of General Switch Block(GSB) took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Sort incoming edges for each input pin node of General Switch Block(GSB)
+[11%] Sorted incoming edges for each input pin node of GSB[0][0][22%] Sorted incoming edges for each input pin node of GSB[0][1][33%] Sorted incoming edges for each input pin node of GSB[0][2][44%] Sorted incoming edges for each input pin node of GSB[1][0][55%] Sorted incoming edges for each input pin node of GSB[1][1][66%] Sorted incoming edges for each input pin node of GSB[1][2][77%] Sorted incoming edges for each input pin node of GSB[2][0][88%] Sorted incoming edges for each input pin node of GSB[2][1][100%] Sorted incoming edges for each input pin node of GSB[2][2]Sorted incoming edges for each input pin node of 9 General Switch Blocks (GSBs).
+# Sort incoming edges for each input pin node of General Switch Block(GSB) took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Build a library of physical multiplexers
+Built a multiplexer library of 11 physical multiplexers.
+Maximum multiplexer size is 64.
+	model 'mux_2level_tapbuf', input_size='3'
+	model 'mux_2level_tapbuf', input_size='4'
+	model 'mux_2level_tapbuf', input_size='11'
+	model 'mux_2level_tapbuf', input_size='9'
+	model 'mux_2level_tapbuf', input_size='10'
+	model 'mux_2level_tapbuf', input_size='5'
+	model 'mux_2level_tapbuf', input_size='6'
+	model 'mux_2level_tapbuf', input_size='12'
+	model 'mux_2level', input_size='51'
+	model 'mux_1level_tapbuf', input_size='3'
+	model 'lut6', input_size='64'
+# Build a library of physical multiplexers took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Build the annotation about direct connection between tiles
+Built 0 tile-to-tile direct connections
+# Build the annotation about direct connection between tiles took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Building annotation for post-routing and clustering synchornization results...Done
+Building annotation for mapped blocks on grid locations...Done
+Will apply operating clock frequency 500 [MHz] to simulations
+Will apply 10 operating clock cycles to simulations
+Link OpenFPGA architecture to VPR architecture took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: check_netlist_naming_conflict --fix --report ./netlist_renaming.xml
+
+Confirm selected options when call command 'check_netlist_naming_conflict':
+--fix: on
+--report: ./netlist_renaming.xml
+Check naming violations of netlist blocks and nets
+Fixed 1 naming conflicts in the netlist.
+Naming fix-up report is generated to file './netlist_renaming.xml'
+Check naming violations of netlist blocks and nets took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: pb_pin_fixup --verbose
+
+Confirm selected options when call command 'pb_pin_fixup':
+--verbose: on
+Fix up pb pin mapping results after routing optimization
+Fixed up net 'unmapped' mapping mismatch at clustered block 'c' pin 'grid[2][1].clb.I[0]' (was net 'a')
+Fixed up net 'unmapped' mapping mismatch at clustered block 'c' pin 'grid[2][1].clb.I[1]' (was net 'b')
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[2]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[3]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[4]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[5]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[6]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[7]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[8]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[9]' as it matches cluster routing
+Fixed up net 'b' mapping mismatch at clustered block 'c' pin 'grid[2][1].clb.I[10]' (was net 'unmapped')
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[11]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[12]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[13]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[14]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[15]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[16]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[17]' as it matches cluster routing
+Fixed up net 'a' mapping mismatch at clustered block 'c' pin 'grid[2][1].clb.I[18]' (was net 'unmapped')
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[19]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[20]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[21]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[22]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[23]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[24]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[25]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[26]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[27]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[28]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[29]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[30]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[31]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[32]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[33]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[34]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[35]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[36]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[37]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[38]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.I[39]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[0]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[1]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[2]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[3]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[4]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[5]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[6]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[7]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[8]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[9]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[10]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[11]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[12]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[13]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[14]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[15]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[16]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[17]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[18]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.O[19]' as it matches cluster routing
+Bypass net at clustered block 'c' pin 'grid[2][1].clb.clk[0]' as it matches cluster routing
+Bypass net at clustered block 'out:c' pin 'grid[2][0].io.outpad[0]' as it matches cluster routing
+Bypass net at clustered block 'out:c' pin 'grid[2][0].io.inpad[0]' as it matches cluster routing
+Bypass net at clustered block 'a' pin 'grid[2][0].io.outpad[0]' as it matches cluster routing
+Bypass net at clustered block 'a' pin 'grid[2][0].io.inpad[0]' as it matches cluster routing
+Bypass net at clustered block 'b' pin 'grid[0][1].io.outpad[0]' as it matches cluster routing
+Bypass net at clustered block 'b' pin 'grid[0][1].io.inpad[0]' as it matches cluster routing
+Fix up pb pin mapping results after routing optimization took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: lut_truth_table_fixup
+
+Confirm selected options when call command 'lut_truth_table_fixup':
+--verbose: off
+Fix up LUT truth tables after packing optimization
+Fix up LUT truth tables after packing optimization took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: build_fabric --compress_routing
+
+Confirm selected options when call command 'build_fabric':
+--frame_view: off
+--compress_routing: on
+--duplicate_grid_pin: off
+--load_fabric_key: off
+--write_fabric_key: off
+--generate_random_fabric_key: off
+--verbose: off
+Identify unique General Switch Blocks (GSBs)
+Detected 9 unique general switch blocks from a total of 9 (compression rate=0.00%)
+Identify unique General Switch Blocks (GSBs) took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+
+Build fabric module graph
+# Build constant generator modules
+# Build constant generator modules took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Build user-defined modules
+# Build user-defined modules took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Build essential (inverter/buffer/logic gate) modules
+# Build essential (inverter/buffer/logic gate) modules took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Build local encoder (for multiplexers) modules
+# Build local encoder (for multiplexers) modules took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Building multiplexer modules
+# Building multiplexer modules took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Build Look-Up Table (LUT) modules
+# Build Look-Up Table (LUT) modules took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Build wire modules
+# Build wire modules took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Build memory modules
+# Build memory modules took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Build grid modules
+Building logical tiles...Done
+Building physical tiles...Done
+# Build grid modules took 0.01 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Build unique routing modules...
+# Build unique routing modules... took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Build FPGA fabric module
+## Add grid instances to top module
+## Add grid instances to top module took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Add switch block instances to top module
+## Add switch block instances to top module took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Add connection block instances to top module
+## Add connection block instances to top module took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Add connection block instances to top module
+## Add connection block instances to top module took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Add module nets between grids and GSBs
+## Add module nets between grids and GSBs took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Add module nets for inter-tile connections
+## Add module nets for inter-tile connections took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Build configurable regions for the top module
+## Build configurable regions for the top module took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+## Add module nets for configuration buses
+## Add module nets for configuration buses took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Build FPGA fabric module took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Build fabric module graph took 0.01 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Create I/O location mapping for top module
+Create I/O location mapping for top module took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Create global port info for top module
+Create global port info for top module took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: write_fabric_hierarchy --file ./fabric_hierarchy.txt
+
+Confirm selected options when call command 'write_fabric_hierarchy':
+--file, -f: ./fabric_hierarchy.txt
+--depth: off
+--verbose: off
+Warning 44: Directory '.' already exists. Will overwrite contents
+Write fabric hierarchy to plain-text file './fabric_hierarchy.txt'
+Write fabric hierarchy to plain-text file './fabric_hierarchy.txt' took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: repack
+
+Confirm selected options when call command 'repack':
+--design_constraints: off
+--ignore_global_nets_on_pins: off
+--verbose: off
+Build routing resource graph for the physical implementation of logical tile
+Build routing resource graph for the physical implementation of logical tile took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Repack clustered blocks to physical implementation of logical tile
+Repack clustered block 'c'...Done
+Repack clustered block 'out:c'...Done
+Repack clustered block 'a'...Done
+Repack clustered block 'b'...Done
+Repack clustered blocks to physical implementation of logical tile took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Identify wire LUTs created by repacking
+Identified 0 wire LUTs created by repacker
+Identify wire LUTs created by repacking took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Build truth tables for physical LUTs
+Build truth tables for physical LUTs took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: build_architecture_bitstream --verbose
+
+Confirm selected options when call command 'build_architecture_bitstream':
+--write_file: off
+--read_file: off
+--no_time_stamp: off
+--verbose: on
+
+Build fabric-independent bitstream for implementation 'and2'
+
+Reserved 939 configurable blocks
+Reserved 7286 configuration bits
+Building grid bitstream...
+Generating bitstream for core grids...Done
+Generating bitstream for I/O grids...Done
+Done
+Building routing bitstream...
+Generating bitstream for Switch blocks...
+	Generating bitstream for Switch blocks[0][0]...
+	Done
+
+	Generating bitstream for Switch blocks[0][1]...
+	Done
+
+	Generating bitstream for Switch blocks[0][2]...
+	Done
+
+	Generating bitstream for Switch blocks[1][0]...
+	Done
+
+	Generating bitstream for Switch blocks[1][1]...
+	Done
+
+	Generating bitstream for Switch blocks[1][2]...
+	Done
+
+	Generating bitstream for Switch blocks[2][0]...
+	Done
+
+	Generating bitstream for Switch blocks[2][1]...
+	Done
+
+	Generating bitstream for Switch blocks[2][2]...
+	Done
+Done
+Generating bitstream for X-direction Connection blocks ...
+	Generating bitstream for X-direction Connection Block [1][0]
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '7'
+	Done
+
+	Generating bitstream for X-direction Connection Block [1][1]
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '7'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '8'
+	Done
+
+	Generating bitstream for X-direction Connection Block [1][2]
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '7'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '7'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '8'
+	Done
+
+	Generating bitstream for X-direction Connection Block [2][0]
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '7'
+	Done
+
+	Generating bitstream for X-direction Connection Block [2][1]
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '7'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '8'
+	Done
+
+	Generating bitstream for X-direction Connection Block [2][2]
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'top' side
+	Generating bitstream for IPIN '7'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '7'
+	Generating bitstream for IPIN at 'bottom' side
+	Generating bitstream for IPIN '8'
+	Done
+Done
+Generating bitstream for Y-direction Connection blocks ...
+	Generating bitstream for Y-direction Connection Block [0][1]
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '7'
+	Done
+
+	Generating bitstream for Y-direction Connection Block [0][2]
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '7'
+	Done
+
+	Generating bitstream for Y-direction Connection Block [1][1]
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '7'
+	Done
+
+	Generating bitstream for Y-direction Connection Block [1][2]
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '7'
+	Done
+
+	Generating bitstream for Y-direction Connection Block [2][1]
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '7'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '7'
+	Done
+
+	Generating bitstream for Y-direction Connection Block [2][2]
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'right' side
+	Generating bitstream for IPIN '7'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '0'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '1'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '2'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '3'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '4'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '5'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '6'
+	Generating bitstream for IPIN at 'left' side
+	Generating bitstream for IPIN '7'
+	Done
+Done
+Done
+Decoded 7286 configuration bits into 939 blocks
+
+Build fabric-independent bitstream for implementation 'and2'
+ took 0.01 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: build_fabric_bitstream --verbose
+
+Confirm selected options when call command 'build_fabric_bitstream':
+--verbose: on
+
+Build fabric dependent bitstream
+
+Built 7286 configuration bits for fabric
+
+Build fabric dependent bitstream
+ took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: write_fabric_bitstream --file fabric_bitstream.bit --format plain_text
+
+Confirm selected options when call command 'write_fabric_bitstream':
+--file, -f: fabric_bitstream.bit
+--format: plain_text
+--fast_configuration: off
+--keep_dont_care_bits: off
+--no_time_stamp: off
+--verbose: off
+Warning 45: Directory path is empty and nothing will be created.
+Write 7286 fabric bitstream into plain text file 'fabric_bitstream.bit'
+Write 7286 fabric bitstream into plain text file 'fabric_bitstream.bit' took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: write_fabric_verilog --file ./SRC --explicit_port_mapping --include_timing --print_user_defined_template --verbose --default_net_type wire
+
+Confirm selected options when call command 'write_fabric_verilog':
+--file, -f: ./SRC
+--explicit_port_mapping: on
+--include_timing: on
+--print_user_defined_template: on
+--default_net_type: wire
+--no_time_stamp: off
+--use_relative_path: off
+--verbose: on
+Write Verilog netlists for FPGA fabric
+
+Succeed to create directory './SRC'
+Succeed to create directory './SRC/sub_module'
+Succeed to create directory './SRC/lb'
+Succeed to create directory './SRC/routing'
+Generating Verilog netlist './SRC/sub_module/inv_buf_passgate.v' for essential gates...Done
+Writing Verilog netlist for configuration decoders './SRC/sub_module/arch_encoder.v'...Done
+Writing Verilog netlist for local decoders for multiplexers './SRC/sub_module/local_encoder.v'...Done
+Writing Verilog netlist for Multiplexer primitives './SRC/sub_module/mux_primitives.v' ...Done
+Writing Verilog netlist for Multiplexers './SRC/sub_module/muxes.v' ...Done
+Writing Verilog netlist for LUTs './SRC/sub_module/luts.v'...Done
+Writing Verilog netlist for wires './SRC/sub_module/wires.v'...Done
+Writing Verilog netlist for memories './SRC/sub_module/memories.v' ...Done
+Writing Verilog netlist for shift register banks './SRC/sub_module/shift_register_banks.v' ...Done
+Creating template for user-defined Verilog modules './SRC/sub_module/user_defined_templates.v'...Done
+
+Writing logical tiles...
+Writing Verilog netlists for logic tile 'io' ...
+Writing Verilog netlist './SRC/lb/logical_tile_io_mode_physical__iopad.v' for primitive pb_type 'iopad' ...
+Writing Verilog codes of logical tile primitive block 'logical_tile_io_mode_physical__iopad'...Done
+Writing Verilog netlist './SRC/lb/logical_tile_io_mode_io_.v' for pb_type 'io' ...
+Writing Verilog codes of pb_type 'logical_tile_io_mode_io_'...Done
+Done
+
+Writing Verilog netlists for logic tile 'clb' ...
+Writing Verilog netlist './SRC/lb/logical_tile_clb_mode_default__fle_mode_physical__ble6_mode_default__lut6.v' for primitive pb_type 'lut6' ...
+Writing Verilog codes of logical tile primitive block 'logical_tile_clb_mode_default__fle_mode_physical__ble6_mode_default__lut6'...Done
+Writing Verilog netlist './SRC/lb/logical_tile_clb_mode_default__fle_mode_physical__ble6_mode_default__ff.v' for primitive pb_type 'ff' ...
+Writing Verilog codes of logical tile primitive block 'logical_tile_clb_mode_default__fle_mode_physical__ble6_mode_default__ff'...Done
+Writing Verilog netlist './SRC/lb/logical_tile_clb_mode_default__fle_mode_physical__ble6.v' for pb_type 'ble6' ...
+Writing Verilog codes of pb_type 'logical_tile_clb_mode_default__fle_mode_physical__ble6'...Done
+Writing Verilog netlist './SRC/lb/logical_tile_clb_mode_default__fle.v' for pb_type 'fle' ...
+Writing Verilog codes of pb_type 'logical_tile_clb_mode_default__fle'...Done
+Writing Verilog netlist './SRC/lb/logical_tile_clb_mode_clb_.v' for pb_type 'clb' ...
+Writing Verilog codes of pb_type 'logical_tile_clb_mode_clb_'...Done
+Done
+
+Writing logical tiles...Done
+
+Building physical tiles...
+Writing Verilog Netlist './SRC/lb/grid_io_top.v' for physical tile 'io' at top side ...Done
+Writing Verilog Netlist './SRC/lb/grid_io_right.v' for physical tile 'io' at right side ...Done
+Writing Verilog Netlist './SRC/lb/grid_io_bottom.v' for physical tile 'io' at bottom side ...Done
+Writing Verilog Netlist './SRC/lb/grid_io_left.v' for physical tile 'io' at left side ...Done
+Writing Verilog Netlist './SRC/lb/grid_clb.v' for physical_tile 'clb'...Done
+Building physical tiles...Done
+
+Writing Verilog netlist for top-level module of FPGA fabric './SRC/fpga_top.v'...Done
+Written 69 Verilog modules in total
+Write Verilog netlists for FPGA fabric
+ took 0.04 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: write_full_testbench --file ./SRC --reference_benchmark_file_path and2_output_verilog.v --explicit_port_mapping --include_signal_init --bitstream fabric_bitstream.bit
+
+Confirm selected options when call command 'write_full_testbench':
+--file, -f: ./SRC
+--bitstream: fabric_bitstream.bit
+--fabric_netlist_file_path: off
+--pin_constraints_file, -pcf: off
+--bus_group_file, -bgf: off
+--reference_benchmark_file_path: and2_output_verilog.v
+--fast_configuration: off
+--explicit_port_mapping: on
+--default_net_type: off
+--no_self_checking: off
+--include_signal_init: on
+--no_time_stamp: off
+--use_relative_path: off
+--verbose: off
+Write Verilog full testbenches for FPGA fabric
+
+Warning 46: Directory './SRC' already exists. Will overwrite contents
+# Write autocheck testbench for FPGA top-level Verilog netlist for 'and2'
+Will use 1693 configuration clock cycles to top testbench
+# Write autocheck testbench for FPGA top-level Verilog netlist for 'and2' took 0.18 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Write Verilog full testbenches for FPGA fabric
+ took 0.18 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: write_preconfigured_fabric_wrapper --embed_bitstream iverilog --file ./SRC  --explicit_port_mapping
+
+Confirm selected options when call command 'write_preconfigured_fabric_wrapper':
+--file, -f: ./SRC
+--fabric_netlist_file_path: off
+--pin_constraints_file, -pcf: off
+--bus_group_file, -bgf: off
+--explicit_port_mapping: on
+--default_net_type: off
+--embed_bitstream: iverilog
+--include_signal_init: off
+--no_time_stamp: off
+--verbose: off
+Write a wrapper module for a preconfigured FPGA fabric
+
+Warning 47: Directory './SRC' already exists. Will overwrite contents
+# Write pre-configured FPGA top-level Verilog netlist for design 'and2'
+# Write pre-configured FPGA top-level Verilog netlist for design 'and2' took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Write a wrapper module for a preconfigured FPGA fabric
+ took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: write_preconfigured_testbench --file ./SRC --reference_benchmark_file_path and2_output_verilog.v --explicit_port_mapping
+
+Confirm selected options when call command 'write_preconfigured_testbench':
+--file, -f: ./SRC
+--fabric_netlist_file_path: off
+--pin_constraints_file, -pcf: off
+--bus_group_file, -bgf: off
+--reference_benchmark_file_path: and2_output_verilog.v
+--explicit_port_mapping: on
+--default_net_type: off
+--no_time_stamp: off
+--use_relative_path: off
+--verbose: off
+Warning 48: Forcely enable to print top-level Verilog netlist in formal verification purpose as print pre-configured top-level Verilog testbench is enabled
+Write Verilog testbenches for a preconfigured FPGA fabric
+
+Warning 49: Directory './SRC' already exists. Will overwrite contents
+# Write configuration-skip testbench for FPGA top-level Verilog netlist implemented by 'and2'
+# Write configuration-skip testbench for FPGA top-level Verilog netlist implemented by 'and2' took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Write Verilog testbenches for a preconfigured FPGA fabric
+ took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: write_pnr_sdc --file ./SDC
+
+Confirm selected options when call command 'write_pnr_sdc':
+--file, -f: ./SDC
+--flatten_names: off
+--hierarchical: off
+--output_hierarchy: off
+--time_unit: off
+--constrain_global_port: off
+--constrain_non_clock_global_port: off
+--constrain_grid: off
+--constrain_sb: off
+--constrain_cb: off
+--constrain_configurable_memory_outputs: off
+--constrain_routing_multiplexer_outputs: off
+--constrain_switch_block_outputs: off
+--constrain_zero_delay_paths: off
+--no_time_stamp: off
+--verbose: off
+Succeed to create directory './SDC'
+Write SDC for constraining clocks for P&R flow './SDC/global_ports.sdc'
+Write SDC for constraining clocks for P&R flow './SDC/global_ports.sdc' took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Write SDC to disable configurable memory outputs for P&R flow './SDC/disable_configurable_memory_outputs.sdc'
+Write SDC to disable configurable memory outputs for P&R flow './SDC/disable_configurable_memory_outputs.sdc' took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Write SDC to disable routing multiplexer outputs for P&R flow './SDC/disable_routing_multiplexer_outputs.sdc'
+Write SDC to disable routing multiplexer outputs for P&R flow './SDC/disable_routing_multiplexer_outputs.sdc' took 0.01 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Write SDC to disable switch block outputs for P&R flow './SDC/disable_sb_outputs.sdc'
+Write SDC to disable switch block outputs for P&R flow './SDC/disable_sb_outputs.sdc' took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Write SDC for constrain Switch Block timing for P&R flow
+Write SDC for constrain Switch Block timing for P&R flow took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Write SDC for constrain Connection Block timing for P&R flow
+Write SDC for constrain Connection Block timing for P&R flow took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+Write SDC for constraining grid timing for P&R flow
+Write SDC for constraining grid timing for P&R flow took 0.01 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: write_sdc_disable_timing_configure_ports --file ./SDC/disable_configure_ports.sdc
+
+Confirm selected options when call command 'write_sdc_disable_timing_configure_ports':
+--file, -f: ./SDC/disable_configure_ports.sdc
+--flatten_names: off
+--no_time_stamp: off
+--verbose: off
+Warning 50: Directory './SDC' already exists. Will overwrite contents
+Write SDC to disable timing on configuration outputs of programmable cells for P&R flow './SDC/disable_configure_ports.sdc'
+Write SDC to disable timing on configuration outputs of programmable cells for P&R flow './SDC/disable_configure_ports.sdc' took 0.01 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: write_analysis_sdc --file ./SDC_analysis
+
+Confirm selected options when call command 'write_analysis_sdc':
+--file, -f: ./SDC_analysis
+--verbose: off
+--flatten_names: off
+--time_unit: off
+--no_time_stamp: off
+Succeed to create directory './SDC_analysis'
+Generating SDC for Timing/Power analysis on the mapped FPGA './SDC_analysis/and2_fpga_top_analysis.sdc'
+Generating SDC for Timing/Power analysis on the mapped FPGA './SDC_analysis/and2_fpga_top_analysis.sdc' took 0.01 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: exit
+
+Confirm selected options when call command 'exit':
+
+Finish execution with 0 errors
+
+The entire OpenFPGA flow took 0.417867 seconds
+
+Thank you for using OpenFPGA!
+Incr Slack updates 12 in 1.1364e-05 sec
+Full Max Req/Worst Slack updates 5 in 5.645e-06 sec
+Incr Max Req/Worst Slack updates 7 in 6.208e-06 sec
+Incr Criticality updates 1 in 1.006e-06 sec
+Full Criticality updates 11 in 1.1563e-05 sec
