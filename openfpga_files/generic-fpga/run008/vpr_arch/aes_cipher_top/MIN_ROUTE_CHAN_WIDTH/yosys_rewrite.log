@@ -1,0 +1,40 @@
+/home/yunus/OpenFPGA/build/yosys/bin/yosys -p read_blif aes_cipher_top.blif; write_verilog aes_cipher_top_output_verilog.v
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.27+22 (git sha1 53c0a6b78, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
+
+
+-- Running command `read_blif aes_cipher_top.blif; write_verilog aes_cipher_top_output_verilog.v' --
+
+1. Executing BLIF frontend.
+
+2. Executing Verilog backend.
+
+2.1. Executing BMUXMAP pass.
+
+2.2. Executing DEMUXMAP pass.
+Dumping module `\aes_cipher_top'.
+
+End of script. Logfile hash: 3e0fd33058, CPU: user 0.20s system 0.00s, MEM: 36.68 MB peak
+Yosys 0.27+22 (git sha1 53c0a6b78, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
+Time spent: 88% 2x write_verilog (0 sec), 10% 2x read_blif (0 sec), ...
+0

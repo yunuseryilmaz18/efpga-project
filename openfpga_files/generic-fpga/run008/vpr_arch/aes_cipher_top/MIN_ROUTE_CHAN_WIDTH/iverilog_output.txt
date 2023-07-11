@@ -1,0 +1,1 @@
+iverilog -o compiled_aes_cipher_top ./SRC/aes_cipher_top_include_netlists.v -s aes_cipher_top_autocheck_top_tb -I ./SRC
