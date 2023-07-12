@@ -1,0 +1,491 @@
+/home/yunus/OpenFPGA/build/yosys/bin/yosys yosys.ys
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.27+22 (git sha1 53c0a6b78, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
+
+
+-- Executing script file `yosys.ys' --
+
+1. Executing Verilog-2005 frontend: ./benchmark/fa.sv
+Parsing Verilog input from `./benchmark/fa.sv' to AST representation.
+Generating RTLIL representation for module `\fa'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: ./benchmark/lpffir_core.sv
+Parsing Verilog input from `./benchmark/lpffir_core.sv' to AST representation.
+Generating RTLIL representation for module `\lpffir_core'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: ./benchmark/rca.sv
+Parsing Verilog input from `./benchmark/rca.sv' to AST representation.
+Generating RTLIL representation for module `\rca'.
+Successfully finished Verilog frontend.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \lpffir_core
+Used module:     \rca
+Used module:         \fa
+
+4.2. Analyzing design hierarchy..
+Top module:  \lpffir_core
+Used module:     \rca
+Used module:         \fa
+Removed 0 unused modules.
+Warning: Resizing cell port lpffir_core.rca_inst4.ci from 32 bits to 1 bits.
+Warning: Resizing cell port lpffir_core.rca_inst3.ci from 32 bits to 1 bits.
+Warning: Resizing cell port lpffir_core.rca_inst2.ci from 32 bits to 1 bits.
+Warning: Resizing cell port lpffir_core.rca_inst1.ci from 32 bits to 1 bits.
+Warning: Resizing cell port lpffir_core.rca_inst0.ci from 32 bits to 1 bits.
+
+5. Executing PROC pass (convert processes to netlists).
+
+5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$./benchmark/lpffir_core.sv:106$13 in module lpffir_core.
+Removed a total of 0 dead cases.
+
+5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+5.4. Executing PROC_INIT pass (extract init attributes).
+
+5.5. Executing PROC_ARST pass (detect async resets in processes).
+
+5.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~2 debug messages>
+
+5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\lpffir_core.$proc$./benchmark/lpffir_core.sv:106$13'.
+     1/5: $0\x5[15:0]
+     2/5: $0\x4[15:0]
+     3/5: $0\x3[15:0]
+     4/5: $0\x2[15:0]
+     5/5: $0\x1[15:0]
+
+5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+5.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\lpffir_core.\x1' using process `\lpffir_core.$proc$./benchmark/lpffir_core.sv:106$13'.
+  created $dff cell `$procdff$40' with positive edge clock.
+Creating register for signal `\lpffir_core.\x2' using process `\lpffir_core.$proc$./benchmark/lpffir_core.sv:106$13'.
+  created $dff cell `$procdff$41' with positive edge clock.
+Creating register for signal `\lpffir_core.\x3' using process `\lpffir_core.$proc$./benchmark/lpffir_core.sv:106$13'.
+  created $dff cell `$procdff$42' with positive edge clock.
+Creating register for signal `\lpffir_core.\x4' using process `\lpffir_core.$proc$./benchmark/lpffir_core.sv:106$13'.
+  created $dff cell `$procdff$43' with positive edge clock.
+Creating register for signal `\lpffir_core.\x5' using process `\lpffir_core.$proc$./benchmark/lpffir_core.sv:106$13'.
+  created $dff cell `$procdff$44' with positive edge clock.
+
+5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\lpffir_core.$proc$./benchmark/lpffir_core.sv:106$13'.
+Removing empty process `lpffir_core.$proc$./benchmark/lpffir_core.sv:106$13'.
+Cleaned up 2 empty switches.
+
+5.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module rca.
+Optimizing module lpffir_core.
+<suppressed ~5 debug messages>
+Optimizing module fa.
+
+6. Executing TECHMAP pass (map to technology primitives).
+
+6.1. Executing Verilog-2005 frontend: /home/yunus/OpenFPGA/build/yosys/bin/../share/yosys/adff2dff.v
+Parsing Verilog input from `/home/yunus/OpenFPGA/build/yosys/bin/../share/yosys/adff2dff.v' to AST representation.
+Generating RTLIL representation for module `\adff2dff'.
+Successfully finished Verilog frontend.
+
+6.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+7. Executing FLATTEN pass (flatten design).
+Deleting now unused module rca.
+Deleting now unused module fa.
+<suppressed ~21 debug messages>
+
+8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module lpffir_core.
+<suppressed ~25 debug messages>
+
+9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \lpffir_core..
+Removed 26 unused cells and 466 unused wires.
+<suppressed ~57 debug messages>
+
+10. Executing CHECK pass (checking for obvious problems).
+Checking module lpffir_core...
+Found and reported 0 problems.
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module lpffir_core.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\lpffir_core'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \lpffir_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \lpffir_core.
+Performed a total of 0 changes.
+
+11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\lpffir_core'.
+Removed a total of 0 cells.
+
+11.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \lpffir_core..
+
+11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module lpffir_core.
+
+11.9. Finished OPT passes. (There is nothing left to do.)
+
+12. Executing FSM pass (extract and optimize FSM).
+
+12.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+12.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+12.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \lpffir_core..
+
+12.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+12.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+12.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+12.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+13. Executing OPT pass (performing simple optimizations).
+
+13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module lpffir_core.
+
+13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\lpffir_core'.
+Removed a total of 0 cells.
+
+13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \lpffir_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \lpffir_core.
+Performed a total of 0 changes.
+
+13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\lpffir_core'.
+Removed a total of 0 cells.
+
+13.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \lpffir_core..
+
+13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module lpffir_core.
+
+13.9. Finished OPT passes. (There is nothing left to do.)
+
+14. Executing WREDUCE pass (reducing word size of cells).
+
+15. Executing PEEPOPT pass (run peephole optimizers).
+
+16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \lpffir_core..
+
+17. Executing OPT pass (performing simple optimizations).
+
+17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module lpffir_core.
+
+17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\lpffir_core'.
+Removed a total of 0 cells.
+
+17.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \lpffir_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+17.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \lpffir_core.
+Performed a total of 0 changes.
+
+17.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\lpffir_core'.
+Removed a total of 0 cells.
+
+17.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+17.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \lpffir_core..
+
+17.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module lpffir_core.
+
+17.9. Finished OPT passes. (There is nothing left to do.)
+
+18. Executing MEMORY pass.
+
+18.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+18.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+18.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+18.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+18.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+18.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \lpffir_core..
+
+18.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+18.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+18.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \lpffir_core..
+
+18.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+19. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \lpffir_core..
+
+20. Executing OPT pass (performing simple optimizations).
+
+20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module lpffir_core.
+
+20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\lpffir_core'.
+Removed a total of 0 cells.
+
+20.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+20.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \lpffir_core..
+
+20.5. Finished fast OPT passes.
+
+21. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+22. Executing OPT pass (performing simple optimizations).
+
+22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module lpffir_core.
+
+22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\lpffir_core'.
+Removed a total of 0 cells.
+
+22.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \lpffir_core..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+22.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \lpffir_core.
+Performed a total of 0 changes.
+
+22.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\lpffir_core'.
+Removed a total of 0 cells.
+
+22.6. Executing OPT_SHARE pass.
+
+22.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+22.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \lpffir_core..
+
+22.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module lpffir_core.
+
+22.10. Finished OPT passes. (There is nothing left to do.)
+
+23. Executing TECHMAP pass (map to technology primitives).
+
+23.1. Executing Verilog-2005 frontend: /home/yunus/OpenFPGA/build/yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/home/yunus/OpenFPGA/build/yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+23.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~598 debug messages>
+
+24. Executing OPT pass (performing simple optimizations).
+
+24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module lpffir_core.
+
+24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\lpffir_core'.
+Removed a total of 0 cells.
+
+24.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \lpffir_core..
+
+24.5. Finished fast OPT passes.
+
+25. Executing ABC pass (technology mapping using ABC).
+
+25.1. Extracting gate netlist of module `\lpffir_core' to `<abc-temp-dir>/input.blif'..
+Extracted 670 gates and 769 wires to a netlist network with 98 inputs and 96 outputs.
+
+25.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + lutpack -S 1 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+25.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:      191
+ABC RESULTS:        internal signals:      575
+ABC RESULTS:           input signals:       98
+ABC RESULTS:          output signals:       96
+Removing temp directory.
+
+26. Executing SYNTH pass.
+
+26.1. Executing HIERARCHY pass (managing design hierarchy).
+
+26.1.1. Analyzing design hierarchy..
+Top module:  \lpffir_core
+
+26.1.2. Analyzing design hierarchy..
+Top module:  \lpffir_core
+Removed 0 unused modules.
+
+26.2. Printing statistics.
+
+=== lpffir_core ===
+
+   Number of wires:               1413
+   Number of wire bits:           1953
+   Number of public wires:         969
+   Number of public wire bits:    1359
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                271
+     $_DFF_P_                       80
+     $lut                          191
+
+26.3. Executing CHECK pass (checking for obvious problems).
+Checking module lpffir_core...
+Found and reported 0 problems.
+
+27. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \lpffir_core..
+Removed 0 unused cells and 1212 unused wires.
+<suppressed ~869 debug messages>
+
+28. Executing BLIF backend.
+
+Warnings: 5 unique messages, 5 total
+End of script. Logfile hash: 1d1db06774, CPU: user 0.34s system 0.01s, MEM: 23.05 MB peak
+Yosys 0.27+22 (git sha1 53c0a6b78, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
+Time spent: 47% 1x abc (0 sec), 16% 12x opt_expr (0 sec), ...
+0

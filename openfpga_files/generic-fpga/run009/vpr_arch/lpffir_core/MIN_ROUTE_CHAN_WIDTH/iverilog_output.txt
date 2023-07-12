@@ -1,0 +1,2 @@
+iverilog -o compiled_lpffir_core ./SRC/lpffir_core_include_netlists.v -s lpffir_core_top_formal_verification_random_tb -I ./SRC
+

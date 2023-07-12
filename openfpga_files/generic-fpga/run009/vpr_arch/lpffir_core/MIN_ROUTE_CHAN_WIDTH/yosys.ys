@@ -1,0 +1,39 @@
+# Yosys synthesis script for lpffir_core
+# Read verilog files
+read_verilog  ./benchmark/fa.sv ./benchmark/lpffir_core.sv ./benchmark/rca.sv
+
+# Technology mapping
+hierarchy -top lpffir_core
+proc
+techmap -D NO_LUT -map +/adff2dff.v
+
+# Synthesis
+flatten
+opt_expr
+opt_clean
+check
+opt -nodffe -nosdff
+fsm
+opt -nodffe -nosdff
+wreduce
+peepopt
+opt_clean
+opt -nodffe -nosdff
+memory -nomap
+opt_clean
+opt -fast -full -nodffe -nosdff
+memory_map
+opt -full -nodffe -nosdff
+techmap
+opt -fast -nodffe -nosdff
+clean
+
+# LUT mapping
+abc -lut 6
+
+# Check
+synth -run check
+
+# Clean and output blif
+opt_clean -purge
+write_blif lpffir_core_yosys_out.blif

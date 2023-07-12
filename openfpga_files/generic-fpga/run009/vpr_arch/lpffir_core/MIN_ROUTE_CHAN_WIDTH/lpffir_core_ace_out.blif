@@ -1,0 +1,1635 @@
+# Benchmark "lpffir_core" written by ABC on Mon Jul 10 14:22:23 2023
+.model lpffir_core
+.inputs clk_i rstn_i en_i x_i[0] x_i[1] x_i[2] x_i[3] x_i[4] x_i[5] x_i[6] \
+ x_i[7] x_i[8] x_i[9] x_i[10] x_i[11] x_i[12] x_i[13] x_i[14] x_i[15]
+.outputs y_o[0] y_o[1] y_o[2] y_o[3] y_o[4] y_o[5] y_o[6] y_o[7] y_o[8] \
+ y_o[9] y_o[10] y_o[11] y_o[12] y_o[13] y_o[14] y_o[15]
+
+.latch        n72 rca_inst1.a0  2
+.latch        n77 rca_inst1.a1  2
+.latch        n82 rca_inst1.a2  2
+.latch        n87 rca_inst1.a3  2
+.latch        n92 rca_inst1.a4  2
+.latch        n97 rca_inst1.a5  2
+.latch       n102 rca_inst1.a6  2
+.latch       n107 rca_inst1.a7  2
+.latch       n112 rca_inst1.a8  2
+.latch       n117 rca_inst1.a9  2
+.latch       n122 rca_inst1.a10  2
+.latch       n127 rca_inst1.a11  2
+.latch       n132 rca_inst1.a12  2
+.latch       n137 rca_inst1.a13  2
+.latch       n142 rca_inst1.a14  2
+.latch       n147 rca_inst1.a15  2
+.latch       n152 rca_inst2.a0  2
+.latch       n157 rca_inst2.a1  2
+.latch       n162 rca_inst2.a2  2
+.latch       n167 rca_inst2.a3  2
+.latch       n172 rca_inst2.a4  2
+.latch       n177 rca_inst2.a5  2
+.latch       n182 rca_inst2.a6  2
+.latch       n187 rca_inst2.a7  2
+.latch       n192 rca_inst2.a8  2
+.latch       n197 rca_inst2.a9  2
+.latch       n202 rca_inst2.a10  2
+.latch       n207 rca_inst2.a11  2
+.latch       n212 rca_inst2.a12  2
+.latch       n217 rca_inst2.a13  2
+.latch       n222 rca_inst2.a14  2
+.latch       n227 rca_inst2.a15  2
+.latch       n232 rca_inst2.b0  2
+.latch       n237 rca_inst2.b1  2
+.latch       n242 rca_inst2.b2  2
+.latch       n247 rca_inst2.b3  2
+.latch       n252 rca_inst2.b4  2
+.latch       n257 rca_inst2.b5  2
+.latch       n262 rca_inst2.b6  2
+.latch       n267 rca_inst2.b7  2
+.latch       n272 rca_inst2.b8  2
+.latch       n277 rca_inst2.b9  2
+.latch       n282 rca_inst2.b10  2
+.latch       n287 rca_inst2.b11  2
+.latch       n292 rca_inst2.b12  2
+.latch       n297 rca_inst2.b13  2
+.latch       n302 rca_inst2.b14  2
+.latch       n307 rca_inst2.b15  2
+.latch       n312 rca_inst1.b0  2
+.latch       n317 rca_inst1.b1  2
+.latch       n322 rca_inst1.b2  2
+.latch       n327 rca_inst1.b3  2
+.latch       n332 rca_inst1.b4  2
+.latch       n337 rca_inst1.b5  2
+.latch       n342 rca_inst1.b6  2
+.latch       n347 rca_inst1.b7  2
+.latch       n352 rca_inst1.b8  2
+.latch       n357 rca_inst1.b9  2
+.latch       n362 rca_inst1.b10  2
+.latch       n367 rca_inst1.b11  2
+.latch       n372 rca_inst1.b12  2
+.latch       n377 rca_inst1.b13  2
+.latch       n382 rca_inst1.b14  2
+.latch       n387 rca_inst1.b15  2
+.latch       n392 rca_inst0.b0  2
+.latch       n397 rca_inst0.b1  2
+.latch       n402 rca_inst0.b2  2
+.latch       n407 rca_inst0.b3  2
+.latch       n412 rca_inst0.b4  2
+.latch       n417 rca_inst0.b5  2
+.latch       n422 rca_inst0.b6  2
+.latch       n427 rca_inst0.b7  2
+.latch       n432 rca_inst0.b8  2
+.latch       n437 rca_inst0.b9  2
+.latch       n442 rca_inst0.b10  2
+.latch       n447 rca_inst0.b11  2
+.latch       n452 rca_inst0.b12  2
+.latch       n457 rca_inst0.b13  2
+.latch       n462 rca_inst0.b14  2
+.latch       n467 rca_inst0.b15  2
+
+.names $abc$875$new_n350_ $abc$875$new_n348_ $abc$875$new_n346_ \
+ $abc$875$new_n321_ $abc$875$new_n316_ $abc$875$new_n347_ \
+ $abc$875$new_n320_
+--0000 1
+--0011 1
+-0-000 1
+-0-011 1
+-00-00 1
+-00-11 1
+0---00 1
+0---11 1
+0-00-- 1
+00-0-- 1
+000--- 1
+.names $abc$875$new_n345_ $abc$875$new_n343_ $abc$875$new_n341_ \
+ $abc$875$new_n322_ $abc$875$new_n312_ $abc$875$new_n342_ \
+ $abc$875$new_n321_
+--0100 1
+--0111 1
+-1-100 1
+-1-111 1
+-10-00 1
+-10-11 1
+1---00 1
+1---11 1
+1-01-- 1
+11-1-- 1
+110--- 1
+.names $abc$875$new_n340_ $abc$875$new_n338_ $abc$875$new_n336_ \
+ $abc$875$new_n323_ $abc$875$new_n309_ $abc$875$new_n337_ \
+ $abc$875$new_n322_
+--0000 1
+--0011 1
+-1-000 1
+-1-011 1
+-10-00 1
+-10-11 1
+1---00 1
+1---11 1
+1-00-- 1
+11-0-- 1
+110--- 1
+.names $abc$875$new_n335_ $abc$875$new_n331_ $abc$875$new_n333_ \
+ $abc$875$new_n324_ $abc$875$new_n306_ $abc$875$new_n332_ \
+ $abc$875$new_n323_
+--0101 1
+--0110 1
+-1-101 1
+-1-110 1
+-10-01 1
+-10-10 1
+0---01 1
+0---10 1
+0-01-- 1
+01-1-- 1
+010--- 1
+.names $abc$875$new_n330_ $abc$875$new_n325_ $abc$875$new_n329_ \
+ $abc$875$new_n303_ $abc$875$new_n324_
+-000 1
+-011 1
+0-00 1
+0-11 1
+00-- 1
+.names $abc$875$new_n328_ $abc$875$new_n326_ $abc$875$new_n327_ \
+ $abc$875$new_n302_ $abc$875$new_n325_
+-001 1
+-010 1
+1-01 1
+1-10 1
+10-- 1
+.names rca_inst2.a0 rca_inst2.b0 x_i[0] rca_inst1.a0 rca_inst1.b0 \
+ rca_inst0.b0 $abc$875$new_n326_
+--0000 0
+--0011 0
+--0101 0
+--0110 0
+--1001 0
+--1010 0
+--1100 0
+--1111 0
+00---- 0
+11---- 0
+.names x_i[0] rca_inst0.b0 rca_inst1.a0 rca_inst1.b0 x_i[1] rca_inst0.b1 \
+ $abc$875$new_n327_
+-00001 1
+-00010 1
+-01101 1
+-01110 1
+-10100 1
+-10111 1
+-11000 1
+-11011 1
+0-0001 1
+0-0010 1
+0-1101 1
+0-1110 1
+00--01 1
+00--10 1
+1-0100 1
+1-0111 1
+1-1000 1
+1-1011 1
+11--00 1
+11--11 1
+.names rca_inst2.a0 rca_inst2.b0 rca_inst2.a1 rca_inst2.b1 \
+ $abc$875$new_n328_
+-000 1
+-011 1
+0-00 1
+0-11 1
+1101 1
+1110 1
+.names $abc$875$new_n302_ $abc$875$new_n301_ $abc$875$new_n300_ \
+ $abc$875$new_n299_ $abc$875$new_n329_
+--11 1
+-100 1
+00-1 1
+1-00 1
+.names rca_inst2.a0 rca_inst2.b0 rca_inst2.a1 rca_inst2.b1 rca_inst2.a2 \
+ rca_inst2.b2 $abc$875$new_n330_
+--0000 1
+--0011 1
+--1101 1
+--1110 1
+-0-000 1
+-0-011 1
+-00-00 1
+-00-11 1
+0--000 1
+0--011 1
+0-0-00 1
+0-0-11 1
+11-101 1
+11-110 1
+111-01 1
+111-10 1
+.names rca_inst0.b3 $abc$875$new_n304_ $abc$875$new_n298_ \
+ $abc$875$new_n297_ $abc$875$new_n331_
+0001 1
+0010 1
+0100 1
+0111 1
+1000 1
+1011 1
+1101 1
+1110 1
+.names $abc$875$new_n304_ $abc$875$new_n298_ rca_inst0.b3 \
+ $abc$875$new_n297_ $abc$875$new_n296_ $abc$875$new_n332_
+-0000 1
+-0110 1
+-1011 1
+-1101 1
+0-000 1
+0-110 1
+00--0 1
+1-011 1
+1-101 1
+11--1 1
+.names rca_inst2.a3 rca_inst2.b3 $abc$875$new_n334_ $abc$875$new_n333_
+001 1
+010 1
+100 1
+111 1
+.names rca_inst2.a1 rca_inst2.a2 rca_inst2.b2 rca_inst2.b1 rca_inst2.b0 \
+ rca_inst2.a0 $abc$875$new_n334_
+--1111 0
+-1-111 0
+-11--- 0
+1-1-11 0
+1-11-- 0
+11--11 0
+11-1-- 0
+.names rca_inst2.a3 rca_inst2.b3 $abc$875$new_n334_ rca_inst2.a4 \
+ rca_inst2.b4 $abc$875$new_n335_
+-0100 1
+-0111 1
+-1001 1
+-1010 1
+0-100 1
+0-111 1
+00-00 1
+00-11 1
+1-001 1
+1-010 1
+11-01 1
+11-10 1
+.names rca_inst0.b5 $abc$875$new_n307_ $abc$875$new_n295_ \
+ $abc$875$new_n294_ $abc$875$new_n336_
+0000 1
+0011 1
+0101 1
+0110 1
+1001 1
+1010 1
+1100 1
+1111 1
+.names $abc$875$new_n307_ $abc$875$new_n295_ rca_inst0.b5 \
+ $abc$875$new_n294_ $abc$875$new_n293_ $abc$875$new_n337_
+-0011 1
+-0101 1
+-1000 1
+-1110 1
+0-000 1
+0-110 1
+01--0 1
+1-011 1
+1-101 1
+10--1 1
+.names rca_inst2.a5 rca_inst2.b5 $abc$875$new_n339_ $abc$875$new_n338_
+001 1
+010 1
+100 1
+111 1
+.names rca_inst2.a3 rca_inst2.a4 rca_inst2.b4 rca_inst2.b3 \
+ $abc$875$new_n334_ $abc$875$new_n339_
+--001 1
+-0-01 1
+-00-- 1
+0-0-1 1
+0-00- 1
+00--1 1
+00-0- 1
+.names rca_inst2.a5 rca_inst2.b5 $abc$875$new_n339_ rca_inst2.a6 \
+ rca_inst2.b6 $abc$875$new_n340_
+-0100 1
+-0111 1
+-1001 1
+-1010 1
+0-100 1
+0-111 1
+00-00 1
+00-11 1
+1-001 1
+1-010 1
+11-01 1
+11-10 1
+.names rca_inst0.b7 $abc$875$new_n310_ $abc$875$new_n292_ \
+ $abc$875$new_n291_ $abc$875$new_n341_
+0000 1
+0011 1
+0101 1
+0110 1
+1001 1
+1010 1
+1100 1
+1111 1
+.names $abc$875$new_n310_ $abc$875$new_n292_ rca_inst0.b7 \
+ $abc$875$new_n291_ $abc$875$new_n290_ $abc$875$new_n342_
+-0011 1
+-0101 1
+-1000 1
+-1110 1
+0-000 1
+0-110 1
+01--0 1
+1-011 1
+1-101 1
+10--1 1
+.names rca_inst2.a7 rca_inst2.b7 $abc$875$new_n344_ $abc$875$new_n343_
+001 1
+010 1
+100 1
+111 1
+.names rca_inst2.a5 rca_inst2.a6 rca_inst2.b6 rca_inst2.b5 \
+ $abc$875$new_n339_ $abc$875$new_n344_
+--001 1
+-0-01 1
+-00-- 1
+0-0-1 1
+0-00- 1
+00--1 1
+00-0- 1
+.names rca_inst2.a7 rca_inst2.b7 $abc$875$new_n344_ rca_inst2.a8 \
+ rca_inst2.b8 $abc$875$new_n345_
+-0100 1
+-0111 1
+-1001 1
+-1010 1
+0-100 1
+0-111 1
+00-00 1
+00-11 1
+1-001 1
+1-010 1
+11-01 1
+11-10 1
+.names rca_inst0.b9 $abc$875$new_n313_ $abc$875$new_n289_ \
+ $abc$875$new_n288_ $abc$875$new_n346_
+0000 1
+0011 1
+0101 1
+0110 1
+1001 1
+1010 1
+1100 1
+1111 1
+.names $abc$875$new_n313_ $abc$875$new_n289_ rca_inst0.b9 \
+ $abc$875$new_n288_ $abc$875$new_n315_ $abc$875$new_n347_
+-0000 1
+-0110 1
+-1011 1
+-1101 1
+0-000 1
+0-110 1
+00--0 1
+1-011 1
+1-101 1
+11--1 1
+.names rca_inst2.a9 rca_inst2.b9 $abc$875$new_n349_ $abc$875$new_n348_
+001 1
+010 1
+100 1
+111 1
+.names rca_inst2.a7 rca_inst2.a8 rca_inst2.b8 rca_inst2.b7 \
+ $abc$875$new_n344_ $abc$875$new_n349_
+--001 1
+-0-01 1
+-00-- 1
+0-0-1 1
+0-00- 1
+00--1 1
+00-0- 1
+.names rca_inst2.a9 rca_inst2.b9 $abc$875$new_n349_ rca_inst2.a10 \
+ rca_inst2.b10 $abc$875$new_n350_
+-0100 1
+-0111 1
+-1001 1
+-1010 1
+0-100 1
+0-111 1
+00-00 1
+00-11 1
+1-001 1
+1-010 1
+11-01 1
+11-10 1
+.names rca_inst1.a11 rca_inst1.b11 $abc$875$new_n318_ rca_inst1.a12 \
+ rca_inst1.b12 $abc$875$new_n351_
+-0100 1
+-0111 1
+-1001 1
+-1010 1
+0-100 1
+0-111 1
+00-00 1
+00-11 1
+1-001 1
+1-010 1
+11-01 1
+11-10 1
+.names rca_inst2.a11 rca_inst2.b11 $abc$875$new_n353_ $abc$875$new_n352_
+001 1
+010 1
+100 1
+111 1
+.names rca_inst2.a9 rca_inst2.a10 rca_inst2.b10 rca_inst2.b9 \
+ $abc$875$new_n349_ $abc$875$new_n353_
+--001 1
+-0-01 1
+-00-- 1
+0-0-1 1
+0-00- 1
+00--1 1
+00-0- 1
+.names rca_inst2.a11 rca_inst2.b11 $abc$875$new_n353_ rca_inst2.a12 \
+ rca_inst2.b12 $abc$875$new_n354_
+-0100 1
+-0111 1
+-1001 1
+-1010 1
+0-100 1
+0-111 1
+00-00 1
+00-11 1
+1-001 1
+1-010 1
+11-01 1
+11-10 1
+.names $abc$875$new_n360_ $abc$875$new_n358_ $abc$875$new_n356_ \
+ $abc$875$new_n355_
+001 1
+010 1
+100 1
+111 1
+.names rca_inst1.a13 rca_inst1.b13 $abc$875$new_n357_ $abc$875$new_n356_
+001 1
+010 1
+100 1
+111 1
+.names rca_inst1.a11 rca_inst1.a12 rca_inst1.b12 rca_inst1.b11 \
+ $abc$875$new_n318_ $abc$875$new_n357_
+--001 1
+-0-01 1
+-00-- 1
+0-0-1 1
+0-00- 1
+00--1 1
+00-0- 1
+.names x_i[13] rca_inst0.b13 $abc$875$new_n359_ $abc$875$new_n358_
+001 1
+010 1
+100 1
+111 1
+.names x_i[11] x_i[12] rca_inst0.b12 rca_inst0.b11 $abc$875$new_n281_ \
+ $abc$875$new_n359_
+--001 1
+-0-01 1
+-00-- 1
+0-0-1 1
+0-00- 1
+00--1 1
+00-0- 1
+.names $abc$875$new_n351_ $abc$875$new_n317_ $abc$875$new_n287_ \
+ $abc$875$new_n280_ rca_inst0.b11 $abc$875$new_n286_ $abc$875$new_n360_
+--0001 1
+--0010 1
+-0-001 1
+-0-010 1
+-000-- 1
+0--0-- 1
+0-0-01 1
+0-0-10 1
+00--01 1
+00--10 1
+000--- 1
+.names $abc$875$new_n360_ $abc$875$new_n358_ $abc$875$new_n356_ \
+ $abc$875$new_n362_ $abc$875$new_n361_
+-001 1
+-110 1
+0-10 1
+01-0 1
+1-01 1
+10-1 1
+.names x_i[13] rca_inst0.b13 $abc$875$new_n359_ x_i[14] rca_inst0.b14 \
+ $abc$875$new_n362_
+-0100 1
+-0111 1
+-1001 1
+-1010 1
+0-100 1
+0-111 1
+00-00 1
+00-11 1
+1-001 1
+1-010 1
+11-01 1
+11-10 1
+.names rca_inst2.a13 rca_inst2.b13 $abc$875$new_n364_ $abc$875$new_n363_
+001 1
+010 1
+100 1
+111 1
+.names rca_inst2.a11 rca_inst2.a12 rca_inst2.b12 rca_inst2.b11 \
+ $abc$875$new_n353_ $abc$875$new_n364_
+--001 1
+-0-01 1
+-00-- 1
+0-0-1 1
+0-00- 1
+00--1 1
+00-0- 1
+.names rca_inst1.a13 rca_inst1.b13 $abc$875$new_n357_ rca_inst1.a14 \
+ rca_inst1.b14 $abc$875$new_n365_
+-0100 1
+-0111 1
+-1001 1
+-1010 1
+0-100 1
+0-111 1
+00-00 1
+00-11 1
+1-001 1
+1-010 1
+11-01 1
+11-10 1
+.names rca_inst2.a13 rca_inst2.b13 $abc$875$new_n364_ rca_inst2.a14 \
+ rca_inst2.b14 $abc$875$new_n366_
+-0100 1
+-0111 1
+-1001 1
+-1010 1
+0-100 1
+0-111 1
+00-00 1
+00-11 1
+1-001 1
+1-010 1
+11-01 1
+11-10 1
+.names $abc$875$new_n360_ $abc$875$new_n365_ $abc$875$new_n362_ \
+ $abc$875$new_n358_ $abc$875$new_n356_ $abc$875$new_n367_
+--000 1
+-0-00 1
+-00-- 1
+1-0-0 1
+1-00- 1
+10--0 1
+10-0- 1
+.names x_i[15] rca_inst1.a15 rca_inst1.b15 rca_inst0.b15 $abc$875$new_n370_ \
+ $abc$875$new_n369_ $abc$875$new_n368_
+000001 1
+000010 1
+000100 1
+000111 1
+001000 1
+001011 1
+001101 1
+001110 1
+010000 1
+010011 1
+010101 1
+010110 1
+011001 1
+011010 1
+011100 1
+011111 1
+100000 1
+100011 1
+100101 1
+100110 1
+101001 1
+101010 1
+101100 1
+101111 1
+110001 1
+110010 1
+110100 1
+110111 1
+111000 1
+111011 1
+111101 1
+111110 1
+.names x_i[13] x_i[14] rca_inst0.b14 rca_inst0.b13 $abc$875$new_n359_ \
+ $abc$875$new_n369_
+--001 1
+-0-01 1
+-00-- 1
+0-0-1 1
+0-00- 1
+00--1 1
+00-0- 1
+.names rca_inst1.a13 rca_inst1.a14 rca_inst1.b14 rca_inst1.b13 \
+ $abc$875$new_n357_ $abc$875$new_n370_
+--001 1
+-0-01 1
+-00-- 1
+0-0-1 1
+0-00- 1
+00--1 1
+00-0- 1
+.names rca_inst2.a13 rca_inst2.a14 rca_inst2.b14 rca_inst2.b13 \
+ $abc$875$new_n364_ $abc$875$new_n371_
+--001 1
+-0-01 1
+-00-- 1
+0-0-1 1
+0-00- 1
+00--1 1
+00-0- 1
+.names $abc$875$new_n363_ $abc$875$new_n278_ $abc$875$new_n355_ \
+ $abc$875$new_n366_ $abc$875$new_n365_ $abc$875$new_n361_ \
+ rca_inst4.fa_inst14.s
+-01000 1
+-01011 1
+-01101 1
+-01110 1
+-10001 1
+-10010 1
+-10100 1
+-10111 1
+0-1000 1
+0-1011 1
+0-1101 1
+0-1110 1
+00-000 1
+00-011 1
+00-101 1
+00-110 1
+1-0001 1
+1-0010 1
+1-0100 1
+1-0111 1
+11-001 1
+11-010 1
+11-100 1
+11-111 1
+.names $abc$875$new_n363_ $abc$875$new_n355_ $abc$875$new_n278_ \
+ rca_inst4.fa_inst13.s
+001 1
+010 1
+100 1
+111 1
+.names $abc$875$new_n352_ $abc$875$new_n319_ $abc$875$new_n320_ \
+ $abc$875$new_n354_ $abc$875$new_n351_ $abc$875$new_n279_ \
+ rca_inst4.fa_inst12.s
+-01000 1
+-01011 1
+-01101 1
+-01110 1
+-10001 1
+-10010 1
+-10100 1
+-10111 1
+0-1000 1
+0-1011 1
+0-1101 1
+0-1110 1
+00-000 1
+00-011 1
+00-101 1
+00-110 1
+1-0001 1
+1-0010 1
+1-0100 1
+1-0111 1
+11-001 1
+11-010 1
+11-100 1
+11-111 1
+.names $abc$875$new_n352_ $abc$875$new_n320_ $abc$875$new_n319_ \
+ rca_inst4.fa_inst11.s
+001 1
+010 1
+100 1
+111 1
+.names $abc$875$new_n348_ $abc$875$new_n346_ $abc$875$new_n321_ \
+ $abc$875$new_n350_ $abc$875$new_n316_ $abc$875$new_n347_ \
+ rca_inst4.fa_inst10.s
+-00000 1
+-00011 1
+-00101 1
+-00110 1
+-11001 1
+-11010 1
+-11100 1
+-11111 1
+0-0000 1
+0-0011 1
+0-0101 1
+0-0110 1
+00-000 1
+00-011 1
+00-101 1
+00-110 1
+1-1001 1
+1-1010 1
+1-1100 1
+1-1111 1
+11-001 1
+11-010 1
+11-100 1
+11-111 1
+.names $abc$875$new_n348_ $abc$875$new_n346_ $abc$875$new_n321_ \
+ rca_inst4.fa_inst9.s
+000 1
+011 1
+101 1
+110 1
+.names $abc$875$new_n343_ $abc$875$new_n341_ $abc$875$new_n322_ \
+ $abc$875$new_n345_ $abc$875$new_n312_ $abc$875$new_n342_ \
+ rca_inst4.fa_inst8.s
+-01000 1
+-01011 1
+-01101 1
+-01110 1
+-10001 1
+-10010 1
+-10100 1
+-10111 1
+0-0001 1
+0-0010 1
+0-0100 1
+0-0111 1
+01-001 1
+01-010 1
+01-100 1
+01-111 1
+1-1000 1
+1-1011 1
+1-1101 1
+1-1110 1
+10-000 1
+10-011 1
+10-101 1
+10-110 1
+.names $abc$875$new_n343_ $abc$875$new_n341_ $abc$875$new_n322_ \
+ rca_inst4.fa_inst7.s
+001 1
+010 1
+100 1
+111 1
+.names $abc$875$new_n338_ $abc$875$new_n336_ $abc$875$new_n323_ \
+ $abc$875$new_n340_ $abc$875$new_n309_ $abc$875$new_n337_ \
+ rca_inst4.fa_inst6.s
+-00000 1
+-00011 1
+-00101 1
+-00110 1
+-11001 1
+-11010 1
+-11100 1
+-11111 1
+0-1001 1
+0-1010 1
+0-1100 1
+0-1111 1
+01-001 1
+01-010 1
+01-100 1
+01-111 1
+1-0000 1
+1-0011 1
+1-0101 1
+1-0110 1
+10-000 1
+10-011 1
+10-101 1
+10-110 1
+.names $abc$875$new_n338_ $abc$875$new_n336_ $abc$875$new_n323_ \
+ rca_inst4.fa_inst5.s
+000 1
+011 1
+101 1
+110 1
+.names $abc$875$new_n333_ $abc$875$new_n331_ $abc$875$new_n324_ \
+ $abc$875$new_n335_ $abc$875$new_n306_ $abc$875$new_n332_ \
+ rca_inst4.fa_inst4.s
+-00000 1
+-00011 1
+-00101 1
+-00110 1
+-11001 1
+-11010 1
+-11100 1
+-11111 1
+0-1001 1
+0-1010 1
+0-1100 1
+0-1111 1
+01-001 1
+01-010 1
+01-100 1
+01-111 1
+1-0000 1
+1-0011 1
+1-0101 1
+1-0110 1
+10-000 1
+10-011 1
+10-101 1
+10-110 1
+.names $abc$875$new_n333_ $abc$875$new_n331_ $abc$875$new_n324_ \
+ rca_inst4.fa_inst3.s
+000 1
+011 1
+101 1
+110 1
+.names $abc$875$new_n330_ $abc$875$new_n303_ $abc$875$new_n329_ \
+ $abc$875$new_n325_ rca_inst4.fa_inst2.s
+0000 1
+0011 1
+0101 1
+0110 1
+1001 1
+1010 1
+1100 1
+1111 1
+.names $abc$875$new_n328_ $abc$875$new_n327_ $abc$875$new_n326_ \
+ $abc$875$new_n302_ rca_inst4.fa_inst1.s
+0001 1
+0010 1
+0100 1
+0111 1
+1000 1
+1011 1
+1101 1
+1110 1
+.names x_i[0] rca_inst1.a0 rca_inst2.a0 rca_inst2.b0 rca_inst1.b0 \
+ rca_inst0.b0 rca_inst4.fa_inst0.s
+000001 1
+000010 1
+000100 1
+000111 1
+001000 1
+001011 1
+001101 1
+001110 1
+010000 1
+010011 1
+010101 1
+010110 1
+011001 1
+011010 1
+011100 1
+011111 1
+100000 1
+100011 1
+100101 1
+100110 1
+101001 1
+101010 1
+101100 1
+101111 1
+110001 1
+110010 1
+110100 1
+110111 1
+111000 1
+111011 1
+111101 1
+111110 1
+.names rca_inst0.b0 rca_inst1.b0 en_i rstn_i n392
+-111 1
+1-01 1
+.names rca_inst0.b1 rca_inst1.b1 en_i rstn_i n397
+-111 1
+1-01 1
+.names rca_inst0.b2 rca_inst1.b2 en_i rstn_i n402
+-111 1
+1-01 1
+.names rca_inst0.b3 rca_inst1.b3 en_i rstn_i n407
+-111 1
+1-01 1
+.names rca_inst0.b4 rca_inst1.b4 en_i rstn_i n412
+-111 1
+1-01 1
+.names rca_inst0.b5 rca_inst1.b5 en_i rstn_i n417
+-111 1
+1-01 1
+.names rca_inst0.b6 rca_inst1.b6 en_i rstn_i n422
+-111 1
+1-01 1
+.names rca_inst0.b7 rca_inst1.b7 en_i rstn_i n427
+-111 1
+1-01 1
+.names rca_inst0.b8 rca_inst1.b8 en_i rstn_i n432
+-111 1
+1-01 1
+.names rca_inst0.b9 rca_inst1.b9 en_i rstn_i n437
+-111 1
+1-01 1
+.names rca_inst0.b10 rca_inst1.b10 en_i rstn_i n442
+-111 1
+1-01 1
+.names rca_inst0.b11 rca_inst1.b11 en_i rstn_i n447
+-111 1
+1-01 1
+.names rca_inst0.b12 rca_inst1.b12 en_i rstn_i n452
+-111 1
+1-01 1
+.names rca_inst0.b13 rca_inst1.b13 en_i rstn_i n457
+-111 1
+1-01 1
+.names rca_inst0.b14 rca_inst1.b14 en_i rstn_i n462
+-111 1
+1-01 1
+.names rca_inst0.b15 rca_inst1.b15 en_i rstn_i n467
+-111 1
+1-01 1
+.names rca_inst1.b0 rca_inst2.b0 en_i rstn_i n312
+-111 1
+1-01 1
+.names rca_inst1.b1 rca_inst2.b1 en_i rstn_i n317
+-111 1
+1-01 1
+.names rca_inst1.b2 rca_inst2.b2 en_i rstn_i n322
+-111 1
+1-01 1
+.names rca_inst1.b3 rca_inst2.b3 en_i rstn_i n327
+-111 1
+1-01 1
+.names rca_inst1.b4 rca_inst2.b4 en_i rstn_i n332
+-111 1
+1-01 1
+.names rca_inst1.b5 rca_inst2.b5 en_i rstn_i n337
+-111 1
+1-01 1
+.names rca_inst1.b6 rca_inst2.b6 en_i rstn_i n342
+-111 1
+1-01 1
+.names rca_inst1.b7 rca_inst2.b7 en_i rstn_i n347
+-111 1
+1-01 1
+.names rca_inst1.b8 rca_inst2.b8 en_i rstn_i n352
+-111 1
+1-01 1
+.names rca_inst1.b9 rca_inst2.b9 en_i rstn_i n357
+-111 1
+1-01 1
+.names rca_inst1.b10 rca_inst2.b10 en_i rstn_i n362
+-111 1
+1-01 1
+.names rca_inst1.b11 rca_inst2.b11 en_i rstn_i n367
+-111 1
+1-01 1
+.names rca_inst1.b12 rca_inst2.b12 en_i rstn_i n372
+-111 1
+1-01 1
+.names rca_inst1.b13 rca_inst2.b13 en_i rstn_i n377
+-111 1
+1-01 1
+.names rca_inst1.b14 rca_inst2.b14 en_i rstn_i n382
+-111 1
+1-01 1
+.names rca_inst1.b15 rca_inst2.b15 en_i rstn_i n387
+-111 1
+1-01 1
+.names rca_inst2.b0 rca_inst2.a0 en_i rstn_i n232
+-111 1
+1-01 1
+.names rca_inst2.b1 rca_inst2.a1 en_i rstn_i n237
+-111 1
+1-01 1
+.names rca_inst2.b2 rca_inst2.a2 en_i rstn_i n242
+-111 1
+1-01 1
+.names rca_inst2.b3 rca_inst2.a3 en_i rstn_i n247
+-111 1
+1-01 1
+.names rca_inst2.b4 rca_inst2.a4 en_i rstn_i n252
+-111 1
+1-01 1
+.names rca_inst2.b5 rca_inst2.a5 en_i rstn_i n257
+-111 1
+1-01 1
+.names rca_inst2.b6 rca_inst2.a6 en_i rstn_i n262
+-111 1
+1-01 1
+.names rca_inst2.b7 rca_inst2.a7 en_i rstn_i n267
+-111 1
+1-01 1
+.names rca_inst2.b8 rca_inst2.a8 en_i rstn_i n272
+-111 1
+1-01 1
+.names rca_inst2.b9 rca_inst2.a9 en_i rstn_i n277
+-111 1
+1-01 1
+.names rca_inst2.b10 rca_inst2.a10 en_i rstn_i n282
+-111 1
+1-01 1
+.names rca_inst2.b11 rca_inst2.a11 en_i rstn_i n287
+-111 1
+1-01 1
+.names rca_inst2.b12 rca_inst2.a12 en_i rstn_i n292
+-111 1
+1-01 1
+.names rca_inst2.b13 rca_inst2.a13 en_i rstn_i n297
+-111 1
+1-01 1
+.names rca_inst2.b14 rca_inst2.a14 en_i rstn_i n302
+-111 1
+1-01 1
+.names rca_inst2.b15 rca_inst2.a15 en_i rstn_i n307
+-111 1
+1-01 1
+.names rca_inst2.a0 rca_inst1.a0 en_i rstn_i n152
+-111 1
+1-01 1
+.names rca_inst2.a1 rca_inst1.a1 en_i rstn_i n157
+-111 1
+1-01 1
+.names rca_inst2.a2 rca_inst1.a2 en_i rstn_i n162
+-111 1
+1-01 1
+.names rca_inst2.a3 rca_inst1.a3 en_i rstn_i n167
+-111 1
+1-01 1
+.names rca_inst2.a4 rca_inst1.a4 en_i rstn_i n172
+-111 1
+1-01 1
+.names rca_inst2.a5 rca_inst1.a5 en_i rstn_i n177
+-111 1
+1-01 1
+.names rca_inst2.a6 rca_inst1.a6 en_i rstn_i n182
+-111 1
+1-01 1
+.names rca_inst2.a7 rca_inst1.a7 en_i rstn_i n187
+-111 1
+1-01 1
+.names rca_inst2.a8 rca_inst1.a8 en_i rstn_i n192
+-111 1
+1-01 1
+.names rca_inst2.a9 rca_inst1.a9 en_i rstn_i n197
+-111 1
+1-01 1
+.names rca_inst2.a10 rca_inst1.a10 en_i rstn_i n202
+-111 1
+1-01 1
+.names rca_inst2.a11 rca_inst1.a11 en_i rstn_i n207
+-111 1
+1-01 1
+.names rca_inst2.a12 rca_inst1.a12 en_i rstn_i n212
+-111 1
+1-01 1
+.names rca_inst2.a13 rca_inst1.a13 en_i rstn_i n217
+-111 1
+1-01 1
+.names rca_inst2.a14 rca_inst1.a14 en_i rstn_i n222
+-111 1
+1-01 1
+.names rca_inst2.a15 rca_inst1.a15 en_i rstn_i n227
+-111 1
+1-01 1
+.names rca_inst1.a0 x_i[0] en_i rstn_i n72
+-111 1
+1-01 1
+.names rca_inst1.a1 x_i[1] en_i rstn_i n77
+-111 1
+1-01 1
+.names rca_inst1.a2 x_i[2] en_i rstn_i n82
+-111 1
+1-01 1
+.names rca_inst1.a3 x_i[3] en_i rstn_i n87
+-111 1
+1-01 1
+.names rca_inst1.a4 x_i[4] en_i rstn_i n92
+-111 1
+1-01 1
+.names rca_inst1.a5 x_i[5] en_i rstn_i n97
+-111 1
+1-01 1
+.names rca_inst1.a6 x_i[6] en_i rstn_i n102
+-111 1
+1-01 1
+.names rca_inst1.a7 x_i[7] en_i rstn_i n107
+-111 1
+1-01 1
+.names rca_inst1.a8 x_i[8] en_i rstn_i n112
+-111 1
+1-01 1
+.names rca_inst1.a9 x_i[9] en_i rstn_i n117
+-111 1
+1-01 1
+.names rca_inst1.a10 x_i[10] en_i rstn_i n122
+-111 1
+1-01 1
+.names rca_inst1.a11 x_i[11] en_i rstn_i n127
+-111 1
+1-01 1
+.names rca_inst1.a12 x_i[12] en_i rstn_i n132
+-111 1
+1-01 1
+.names rca_inst1.a13 x_i[13] en_i rstn_i n137
+-111 1
+1-01 1
+.names rca_inst1.a14 x_i[14] en_i rstn_i n142
+-111 1
+1-01 1
+.names rca_inst1.a15 x_i[15] en_i rstn_i n147
+-111 1
+1-01 1
+.names rca_inst2.a15 rca_inst2.b15 $abc$875$new_n371_ $abc$875$new_n368_ \
+ $abc$875$new_n367_ $abc$875$new_n277_ rca_inst4.fa_inst15.s
+000000 1
+000011 1
+000101 1
+000110 1
+001001 1
+001010 1
+001100 1
+001111 1
+010001 1
+010010 1
+010100 1
+010111 1
+011000 1
+011011 1
+011101 1
+011110 1
+100001 1
+100010 1
+100100 1
+100111 1
+101000 1
+101011 1
+101101 1
+101110 1
+110000 1
+110011 1
+110101 1
+110110 1
+111001 1
+111010 1
+111100 1
+111111 1
+.names $abc$875$new_n366_ $abc$875$new_n355_ $abc$875$new_n363_ \
+ $abc$875$new_n278_ $abc$875$new_n365_ $abc$875$new_n361_ \
+ $abc$875$new_n277_
+--0000 1
+--0011 1
+-1-000 1
+-1-011 1
+-10-00 1
+-10-11 1
+0---00 1
+0---11 1
+0-00-- 1
+01-0-- 1
+010--- 1
+.names $abc$875$new_n354_ $abc$875$new_n352_ $abc$875$new_n320_ \
+ $abc$875$new_n319_ $abc$875$new_n351_ $abc$875$new_n279_ \
+ $abc$875$new_n278_
+--0101 1
+--0110 1
+-1-101 1
+-1-110 1
+-10-01 1
+-10-10 1
+1---01 1
+1---10 1
+1-01-- 1
+11-1-- 1
+110--- 1
+.names $abc$875$new_n317_ $abc$875$new_n287_ rca_inst0.b11 \
+ $abc$875$new_n286_ $abc$875$new_n280_ $abc$875$new_n279_
+-0011 1
+-0101 1
+-1000 1
+-1110 1
+0-011 1
+0-101 1
+00--1 1
+1-000 1
+1-110 1
+11--0 1
+.names x_i[11] rca_inst0.b11 $abc$875$new_n281_ x_i[12] rca_inst0.b12 \
+ $abc$875$new_n280_
+-0100 1
+-0111 1
+-1001 1
+-1010 1
+0-100 1
+0-111 1
+00-00 1
+00-11 1
+1-001 1
+1-010 1
+11-01 1
+11-10 1
+.names x_i[9] x_i[10] rca_inst0.b10 rca_inst0.b9 $abc$875$new_n282_ \
+ $abc$875$new_n281_
+--001 1
+-0-01 1
+-00-- 1
+0-0-1 1
+0-00- 1
+00--1 1
+00-0- 1
+.names x_i[7] x_i[8] rca_inst0.b8 rca_inst0.b7 $abc$875$new_n283_ \
+ $abc$875$new_n282_
+--000 1
+-0-00 1
+-00-- 1
+0-0-0 1
+0-00- 1
+00--0 1
+00-0- 1
+.names x_i[5] x_i[6] rca_inst0.b6 rca_inst0.b5 $abc$875$new_n284_ \
+ $abc$875$new_n283_
+--111 1
+-1-11 1
+-11-- 1
+1-1-1 1
+1-11- 1
+11--1 1
+11-1- 1
+.names x_i[3] x_i[4] $abc$875$new_n285_ rca_inst0.b4 rca_inst0.b3 \
+ $abc$875$new_n284_
+--011 1
+-1-1- 1
+-10-1 1
+1--11 1
+1-01- 1
+11--1 1
+110-- 1
+.names x_i[1] x_i[2] rca_inst0.b2 rca_inst0.b1 rca_inst0.b0 x_i[0] \
+ $abc$875$new_n285_
+--1111 0
+-1-111 0
+-11--- 0
+1-1-11 0
+1-11-- 0
+11--11 0
+11-1-- 0
+.names x_i[11] $abc$875$new_n281_ $abc$875$new_n286_
+00 1
+11 1
+.names $abc$875$new_n316_ $abc$875$new_n313_ $abc$875$new_n289_ \
+ $abc$875$new_n315_ $abc$875$new_n288_ rca_inst0.b9 $abc$875$new_n287_
+--0100 1
+--0111 1
+-0-100 1
+-0-111 1
+-001-- 1
+1--1-- 1
+1-0-00 1
+1-0-11 1
+10--00 1
+10--11 1
+100--- 1
+.names x_i[9] $abc$875$new_n282_ $abc$875$new_n288_
+00 1
+11 1
+.names $abc$875$new_n312_ $abc$875$new_n310_ $abc$875$new_n292_ \
+ $abc$875$new_n290_ rca_inst0.b7 $abc$875$new_n291_ $abc$875$new_n289_
+--0001 1
+--0010 1
+-1-001 1
+-1-010 1
+-100-- 1
+1--0-- 1
+1-0-01 1
+1-0-10 1
+11--01 1
+11--10 1
+110--- 1
+.names x_i[7] rca_inst0.b7 $abc$875$new_n283_ x_i[8] rca_inst0.b8 \
+ $abc$875$new_n290_
+-0000 1
+-0011 1
+-1101 1
+-1110 1
+0-000 1
+0-011 1
+00-00 1
+00-11 1
+1-101 1
+1-110 1
+11-01 1
+11-10 1
+.names x_i[7] $abc$875$new_n283_ $abc$875$new_n291_
+01 1
+10 1
+.names $abc$875$new_n309_ $abc$875$new_n307_ $abc$875$new_n295_ \
+ $abc$875$new_n293_ rca_inst0.b5 $abc$875$new_n294_ $abc$875$new_n292_
+--1100 1
+--1111 1
+-0-100 1
+-0-111 1
+-011-- 1
+0--1-- 1
+0-1-00 1
+0-1-11 1
+00--00 1
+00--11 1
+001--- 1
+.names x_i[5] rca_inst0.b5 $abc$875$new_n284_ x_i[6] rca_inst0.b6 \
+ $abc$875$new_n293_
+-0000 1
+-0011 1
+-1101 1
+-1110 1
+0-000 1
+0-011 1
+00-00 1
+00-11 1
+1-101 1
+1-110 1
+11-01 1
+11-10 1
+.names x_i[5] $abc$875$new_n284_ $abc$875$new_n294_
+01 1
+10 1
+.names $abc$875$new_n306_ $abc$875$new_n304_ $abc$875$new_n298_ \
+ $abc$875$new_n296_ rca_inst0.b3 $abc$875$new_n297_ $abc$875$new_n295_
+--0100 1
+--0111 1
+-0-100 1
+-0-111 1
+-001-- 1
+0--1-- 1
+0-0-00 1
+0-0-11 1
+00--00 1
+00--11 1
+000--- 1
+.names x_i[3] rca_inst0.b3 $abc$875$new_n285_ x_i[4] rca_inst0.b4 \
+ $abc$875$new_n296_
+-0100 1
+-0111 1
+-1001 1
+-1010 1
+0-100 1
+0-111 1
+00-00 1
+00-11 1
+1-001 1
+1-010 1
+11-01 1
+11-10 1
+.names x_i[3] $abc$875$new_n285_ $abc$875$new_n297_
+00 1
+11 1
+.names $abc$875$new_n300_ $abc$875$new_n302_ $abc$875$new_n301_ \
+ $abc$875$new_n303_ $abc$875$new_n299_ $abc$875$new_n298_
+---00 1
+-00-0 1
+-000- 1
+1---0 1
+1--0- 1
+.names x_i[0] rca_inst0.b0 x_i[1] rca_inst0.b1 x_i[2] rca_inst0.b2 \
+ $abc$875$new_n299_
+--0000 1
+--0011 1
+--1101 1
+--1110 1
+-0-000 1
+-0-011 1
+-00-00 1
+-00-11 1
+0--000 1
+0--011 1
+0-0-00 1
+0-0-11 1
+11-101 1
+11-110 1
+111-01 1
+111-10 1
+.names x_i[1] rca_inst0.b1 rca_inst1.b0 rca_inst1.a0 x_i[0] rca_inst0.b0 \
+ $abc$875$new_n300_
+----00 0
+----11 0
+--00-- 0
+--11-- 0
+00---- 0
+11---- 0
+.names rca_inst1.b0 rca_inst1.a0 x_i[1] rca_inst0.b1 x_i[0] rca_inst0.b0 \
+ $abc$875$new_n301_
+--0011 0
+--01-0 0
+--010- 0
+--10-0 0
+--100- 0
+--1111 0
+01--01 0
+01--10 0
+10--01 0
+10--10 0
+.names rca_inst1.a0 rca_inst1.b0 rca_inst1.a1 rca_inst1.b1 \
+ $abc$875$new_n302_
+-000 1
+-011 1
+0-00 1
+0-11 1
+1101 1
+1110 1
+.names rca_inst1.a0 rca_inst1.b0 rca_inst1.a1 rca_inst1.b1 rca_inst1.a2 \
+ rca_inst1.b2 $abc$875$new_n303_
+--0000 1
+--0011 1
+--1101 1
+--1110 1
+-0-000 1
+-0-011 1
+-00-00 1
+-00-11 1
+0--000 1
+0--011 1
+0-0-00 1
+0-0-11 1
+11-101 1
+11-110 1
+111-01 1
+111-10 1
+.names rca_inst1.a3 rca_inst1.b3 $abc$875$new_n305_ $abc$875$new_n304_
+001 1
+010 1
+100 1
+111 1
+.names rca_inst1.a1 rca_inst1.a2 rca_inst1.b2 rca_inst1.b1 rca_inst1.b0 \
+ rca_inst1.a0 $abc$875$new_n305_
+--1111 1
+-1-111 1
+-11--- 1
+1-1-11 1
+1-11-- 1
+11--11 1
+11-1-- 1
+.names rca_inst1.a3 rca_inst1.b3 $abc$875$new_n305_ rca_inst1.a4 \
+ rca_inst1.b4 $abc$875$new_n306_
+-0001 1
+-0010 1
+-1100 1
+-1111 1
+0-001 1
+0-010 1
+00-01 1
+00-10 1
+1-100 1
+1-111 1
+11-00 1
+11-11 1
+.names rca_inst1.a5 rca_inst1.b5 $abc$875$new_n308_ $abc$875$new_n307_
+001 1
+010 1
+100 1
+111 1
+.names rca_inst1.a3 rca_inst1.a4 rca_inst1.b4 rca_inst1.b3 \
+ $abc$875$new_n305_ $abc$875$new_n308_
+--111 1
+-1-11 1
+-11-- 1
+1-1-1 1
+1-11- 1
+11--1 1
+11-1- 1
+.names rca_inst1.a5 rca_inst1.b5 $abc$875$new_n308_ rca_inst1.a6 \
+ rca_inst1.b6 $abc$875$new_n309_
+-0001 1
+-0010 1
+-1100 1
+-1111 1
+0-001 1
+0-010 1
+00-01 1
+00-10 1
+1-100 1
+1-111 1
+11-00 1
+11-11 1
+.names rca_inst1.a7 rca_inst1.b7 $abc$875$new_n311_ $abc$875$new_n310_
+001 1
+010 1
+100 1
+111 1
+.names rca_inst1.a5 rca_inst1.a6 rca_inst1.b6 rca_inst1.b5 \
+ $abc$875$new_n308_ $abc$875$new_n311_
+--111 1
+-1-11 1
+-11-- 1
+1-1-1 1
+1-11- 1
+11--1 1
+11-1- 1
+.names rca_inst1.a7 rca_inst1.b7 $abc$875$new_n311_ rca_inst1.a8 \
+ rca_inst1.b8 $abc$875$new_n312_
+-0001 1
+-0010 1
+-1100 1
+-1111 1
+0-001 1
+0-010 1
+00-01 1
+00-10 1
+1-100 1
+1-111 1
+11-00 1
+11-11 1
+.names rca_inst1.a9 rca_inst1.b9 $abc$875$new_n314_ $abc$875$new_n313_
+001 1
+010 1
+100 1
+111 1
+.names rca_inst1.a7 rca_inst1.a8 rca_inst1.b8 rca_inst1.b7 \
+ $abc$875$new_n311_ $abc$875$new_n314_
+--111 1
+-1-11 1
+-11-- 1
+1-1-1 1
+1-11- 1
+11--1 1
+11-1- 1
+.names x_i[9] rca_inst0.b9 $abc$875$new_n282_ x_i[10] rca_inst0.b10 \
+ $abc$875$new_n315_
+-0100 1
+-0111 1
+-1001 1
+-1010 1
+0-100 1
+0-111 1
+00-00 1
+00-11 1
+1-001 1
+1-010 1
+11-01 1
+11-10 1
+.names rca_inst1.a9 rca_inst1.b9 $abc$875$new_n314_ rca_inst1.a10 \
+ rca_inst1.b10 $abc$875$new_n316_
+-0000 1
+-0011 1
+-1101 1
+-1110 1
+0-000 1
+0-011 1
+00-00 1
+00-11 1
+1-101 1
+1-110 1
+11-01 1
+11-10 1
+.names rca_inst1.a11 rca_inst1.b11 $abc$875$new_n318_ $abc$875$new_n317_
+001 1
+010 1
+100 1
+111 1
+.names rca_inst1.a9 rca_inst1.a10 rca_inst1.b10 rca_inst1.b9 \
+ $abc$875$new_n314_ $abc$875$new_n318_
+--000 1
+-0-00 1
+-00-- 1
+0-0-0 1
+0-00- 1
+00--0 1
+00-0- 1
+.names rca_inst0.b11 $abc$875$new_n317_ $abc$875$new_n287_ \
+ $abc$875$new_n286_ $abc$875$new_n319_
+0000 1
+0011 1
+0101 1
+0110 1
+1001 1
+1010 1
+1100 1
+1111 1
+.names rca_inst4.fa_inst0.s y_o[0]
+1 1
+.names rca_inst4.fa_inst1.s y_o[1]
+1 1
+.names rca_inst4.fa_inst2.s y_o[2]
+1 1
+.names rca_inst4.fa_inst3.s y_o[3]
+1 1
+.names rca_inst4.fa_inst4.s y_o[4]
+1 1
+.names rca_inst4.fa_inst5.s y_o[5]
+1 1
+.names rca_inst4.fa_inst6.s y_o[6]
+1 1
+.names rca_inst4.fa_inst7.s y_o[7]
+1 1
+.names rca_inst4.fa_inst8.s y_o[8]
+1 1
+.names rca_inst4.fa_inst9.s y_o[9]
+1 1
+.names rca_inst4.fa_inst10.s y_o[10]
+1 1
+.names rca_inst4.fa_inst11.s y_o[11]
+1 1
+.names rca_inst4.fa_inst12.s y_o[12]
+1 1
+.names rca_inst4.fa_inst13.s y_o[13]
+1 1
+.names rca_inst4.fa_inst14.s y_o[14]
+1 1
+.names rca_inst4.fa_inst15.s y_o[15]
+1 1
+.end
