@@ -37,7 +37,7 @@
 
 int main()
 {
-	while(read_efpga_csr() != 1);
+	//while(read_efpga_csr() != 1);
 	EFPGA_REG(EFPGA_IOSEL0)  = 0xBED6DA00;
 	EFPGA_REG(EFPGA_IOSEL1)  = 0x116A808D;
 	EFPGA_REG(EFPGA_IOSEL2)  = 0xFBEF5CDF;
