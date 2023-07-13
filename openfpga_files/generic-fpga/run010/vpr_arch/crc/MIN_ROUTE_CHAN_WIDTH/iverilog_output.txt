@@ -1,0 +1,6 @@
+iverilog -o compiled_crc ./SRC/crc_include_netlists.v -s crc_autocheck_top_tb -I ./SRC
+././SRC/fabric_netlists.v:16: Include file ./openfpga_cell_library/dff.v not found
+error: Unable to find the root module "crc_autocheck_top_tb" in the Verilog source.
+     : Perhaps ``-s crc_autocheck_top_tb'' is incorrect?
+1 error(s) during elaboration.
+1
